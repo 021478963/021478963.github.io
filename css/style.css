@@ -1,9 +1,4 @@
 @font-face {
-  font-family: "Oxygen-Mono";
-  src: url("../fonts/RobotoSlab-VariableFont_wght.ttf");
-}
-
-@font-face {
   font-family: "Roboto-Slab";
   src: url("../fonts/RobotoSlab-VariableFont_wght.ttf");
 }
@@ -11,16 +6,6 @@
 @font-face {
   font-family: "Quicksand";
   src: url("../fonts/Quicksand-VariableFont_wght.ttf");
-}
-
-@font-face {
-  font-family: "Heebo";
-  src: url("../fonts/Heebo-VariableFont_wght.ttf");
-}
-
-@font-face {
-  font-family: "Open-Sans";
-  src: url("../fonts/OpenSans-VariableFont_wdth\,wght.ttf");
 }
 
 :root {
@@ -74,7 +59,6 @@ header {
 }
 
 header h1:first-of-type {
-  /* display: inline-block; */
   margin-top: var(--outer-margin);
 }
 
@@ -97,6 +81,7 @@ nav ul {
   list-style-type: none;
   display: flex;
   margin-bottom: var(--outer-margin);
+  position: relative;
 }
 
 nav ul li {
@@ -105,6 +90,22 @@ nav ul li {
 
 nav ul li:not(:last-of-type) {
   margin-right: 2rem;
+}
+
+nav ul li p {
+  visibility: hidden;
+  /* never do this :D */
+}
+
+#why {
+  position: absolute;
+  bottom: 15px;
+  font-size: max(1rem, 1vw);
+  white-space: nowrap;
+}
+
+.visible {
+  visibility: visible;
 }
 
 @supports (-webkit-touch-callout: none) {
