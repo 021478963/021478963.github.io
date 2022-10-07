@@ -1,0 +1,39 @@
+.footer-background {
+  background-color: var(--bg-color);
+}
+
+footer {
+  display: flex;
+}
+
+footer nav ul {
+  list-style-type: none;
+}
+
+footer nav li {
+  display: inline-block;
+  margin: auto 1rem;
+}
+
+.footer-left {
+  display: flex;
+  justify-self: flex-start;
+  align-items: center;
+  margin: auto 1rem;
+}
+
+.branding-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.branding-wrapper img {
+  height: auto;
+  width: 10rem;
+  border-radius: 100%;
+}
+
+.branding-wrapper > *:not(:last-child) {
+  margin-right: 2rem;
+}
+
