@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" 
+    integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" 
+    crossorigin="anonymous" referrerpolicy="no-referrer">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/homepage.css">
+  <title>Allan He-Chen</title>
+</head>
+
+<body>
+
+<header>
+  <h1>Allan</h1>
+  <h1>He-Chen</h1>
+</header>
+
+<nav>
+  <a href="about.html"><h2>About</h2></a>
+  <a href="projects.html"><h2>Projects</h2></a>
+  <ul>
+    <li><a href="https://github.com/allanhechen" target="_blank"><i class="fa-brands fa-github"></i></a></li>
+    <li><a href="https://www.linkedin.com/in/allan-he-chen/" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a></li>
+    <li><a><i class="fa-brands fa-discord" onclick="visible()"></i></a></li>
+    <li><p id="why">o-o#0650</p></li>
+    <!-- i hate ids :D -->
+  </ul>
+</nav>
+
+<script>
+  function visible() {
+    document.getElementById("why").classList.toggle("visible");
+  }
+</script>
+
+</body>
+</html>
