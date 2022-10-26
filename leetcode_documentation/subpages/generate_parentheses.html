@@ -30,6 +30,116 @@
         formed parentheses.
       </blockquote>
     </section>
+
+    <section class="page-description">
+      <p class="following-paragraph">
+        Damn, I really am out of practice. My first thought after reading this question was,
+        "This question is pretty hard..." Anways, something jumps out to me. If I look at the
+        example, I notice that there is a lot of repetitive work being done. For example, if I
+        have 3 sets of parentheses, "((()))" and "(()())" both start with "((" and end with "))."
+        Perhaps I can use a form of recursion, and pass in the current beginning I have? Also,
+        if I keep track of how deep I'm in a set of parentheses, I won't need to keep track of 
+        how many ending parentheses I have left.
+      </p>
+
+      <p class="following-paragraph">
+        Furthermore, I also need to keep track of the answers somehow. Since I am using recursion,
+        I think I can either pass in the end result (memoization), or I can do it tail recursively.
+        I think the first one is a better idea, so I don't have to combine the answers in the end.
+      </p>
+
+      <p class="following-paragraph">
+        As of right now, my thoughts are as follows: 
+      </p>
+
+      <ol class="list--ordered">
+        <li class="list__item">
+          I call the function with my current set of
+          parentheses, and how far deep I am in. I also keep track of how many opening parentheses
+          I have left.
+        </li>
+        <li class="list__item">
+          I check if I have any more opening parentheses to give. If not, I add (depth) closing 
+          parentheses to my current result, and add it to the final results.
+        </li>
+        <li class="list__item">
+          Otherwise, I recursively call the function again, one with adding one depth, the other 
+          removing one depth.
+        </li>
+      </ol>
+
+      <code class="code-demonstration">
+        def recursive(current, depth, remaining, memo):
+          if remaining == 0:
+              current = current + ")" * depth
+              memo.add(current)
+              return
+        
+          recursive(current + "(", depth + 1, remaining - 1, memo)
+          
+          if depth > 0:
+              recursive(current + ")", depth - 1, remaining, memo)
+            
+        result = set()
+        depth = 0
+        current = ""
+        remaining = n
+        result_list = []
+        
+        recursive(current, depth, remaining, result)
+        
+        for i in result:
+            result_list.append(i)
+        
+        return result_list
+      </code>
+
+      <p class="following-paragraph">
+        IT WORKS! However, it's only 50% faster. I think I can do better than this. Right now, 
+        I'm using string concatenation to join my strings. There has to be a faster way, since
+        string concatenation is O(n) time, for each string, for each component. Perhaps I can
+        pass in an array, and keep track of the current position. I know the end result will be
+        2 * n, since each n will have an opening and closing parentheses.
+      </p>
+
+      <code class="code-demonstration">
+        def recursive(currentpos, currentarray, depth, remaining, memo):
+
+          if remaining == 0:
+              for i in range(depth):
+                  currentarray[currentpos] = ")"
+                  currentpos = currentpos + 1
+              memo.add("".join(currentarray))
+              return
+          
+          currentarray[currentpos] = "("
+          recursive(currentpos + 1, currentarray, depth + 1, remaining - 1, memo)
+          
+          if depth > 0:
+              currentarray[currentpos] = ")"
+              currentpos = currentpos + 1
+              recursive(currentpos, currentarray, depth - 1, remaining, memo)
+              
+        result = set()
+        depth = 0
+        currentpos = 0
+        currentarray = [None] * 2 * n
+        remaining = n
+        result_list = []
+        
+        recursive(currentpos, currentarray, depth, remaining, result)
+        
+        for i in result:
+            result_list.append(i)
+        
+        return result_list
+      </code>
+
+      <p class="following-paragraph">
+        90% faster! I think this is where I'm going to leave this question, I'm pretty content
+        with my results. Time to move down the list of questions on PK's website...
+      </p>
+    </section>
   </main>
 </body>
 </html>
@@ -42,12 +152,16 @@
     nav__link-group
     nav__link__item
   
+  section
     page-info
       intro-paragraph
+    page-description
       following-paragraph
       
   list--ordered
     list__item
+
+  code-demonstration
 
   checklist:
     1. title, main title
