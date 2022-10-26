@@ -1,0 +1,107 @@
+@font-face {
+  font-family: "Oswald";
+  src: url(../font/Oswald-VariableFont_wght.ttf);
+}
+
+@font-face {
+  font-family: "Source-Sans";
+  src: url(../font/SourceSansPro-Regular.ttf);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --color--bg--dark: #1E2022;
+  --color--bg--accent: #293035;
+  --color--fg--light: #cacdd1;
+  --color--fg--accent: #afbbc4;
+  --ff--title: "Oswald", serif;
+  --ff--other: "Source-Sans", sans-serif;
+  --margin--outer: 1.5rem;
+  --margin--inner: 1rem;
+}
+
+h1, h2, h3 {
+  font-family: var(--ff--title);
+  color: var(--color--fg--light);
+  font-size: 2rem;
+}
+
+.main-title {
+  font-size: 3rem;
+  margin-bottom: max(3vh, 3rem);
+}
+
+p, a, li, blockquote {
+  font-family: var(--ff--other);
+  color: var(--color--fg--accent);
+  font-size: 1.2rem;
+  /* line-height: 1.6rem; */
+}
+
+.fa-brands {
+  font-size: 2.5rem;
+  color: var(--color--fg--light);
+}
+
+.fa-circle {
+  color: var(--color--bg--dark);
+}
+
+.fa-brands:hover {
+  color: var(--color--fg--accent);
+}
+
+body {
+  background-color: var(--color--bg--dark);
+}
+
+header {
+  text-align: center;
+  width: clamp(10rem, 100%, 40rem);
+  margin: 10vh auto max(5rem, 5vh);
+}
+
+.nav__link-group {
+  list-style-type: none;
+}
+
+.nav__link__item {
+  display: inline-block;
+}
+
+.nav__link__item:not(:first-of-type) {
+  margin-left: var(--margin--inner);
+}
+
+main {
+  width: clamp(10rem, 100%, 45rem);
+  margin: 0 auto;
+}
+
+.question-content {
+  padding: var(--margin--outer) var(--margin--outer);
+  border-radius: 10px;
+  /* text-align: justify; */
+  background-color: var(--color--bg--accent);
+}
+
+section {
+  /* text-align: justify; */
+}
+
+main > * {
+  margin: var(--margin--inner) var(--margin--outer);
+}
+
+.list--ordered > * {
+  margin: var(--margin--outer) var(--margin--outer);
+}
+
+section > * {
+  margin: var(--margin--outer) var(--margin--outer);
+}
