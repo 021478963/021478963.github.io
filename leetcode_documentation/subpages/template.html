@@ -45,31 +45,33 @@
         </li>
       </ol>
 
-      <code class="code-demonstration">
-        def recursive(current, depth, remaining, memo):
-          if remaining == 0:
-              current = current + ")" * depth
-              memo.add(current)
-              return
-        
-          recursive(current + "(", depth + 1, remaining - 1, memo)
-          
-          if depth > 0:
-              recursive(current + ")", depth - 1, remaining, memo)
-            
-        result = set()
-        depth = 0
-        current = ""
-        remaining = n
-        result_list = []
-        
-        recursive(current, depth, remaining, result)
-        
-        for i in result:
-            result_list.append(i)
-        
-        return result_list
-      </code>
+      <div class="code-demonstration">
+        <code>
+def recursive(current, depth, remaining, memo):
+  if remaining == 0:
+      current = current + ")" * depth
+      memo.add(current)
+      return
+
+  recursive(current + "(", depth + 1, remaining - 1, memo)
+
+  if depth > 0:
+      recursive(current + ")", depth - 1, remaining, memo)
+
+result = set()
+depth = 0
+current = ""
+remaining = n
+result_list = []
+
+recursive(current, depth, remaining, result)
+
+for i in result:
+    result_list.append(i)
+
+return result_list
+        </code>
+      </div>
     </section>
 
     <section class="page__reflection">

@@ -8,6 +8,11 @@
   src: url(../font/SourceSansPro-Regular.ttf);
 }
 
+@font-face {
+  font-family: "DM-Mono";
+  src: url(../font/DMMono-Regular.ttf)
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -20,6 +25,7 @@
   --color--fg--light: #cacdd1;
   --color--fg--accent: #afbbc4;
   --ff--title: "Oswald", serif;
+  --ff--mono: "DM-Mono", mono;
   --ff--other: "Source-Sans", sans-serif;
   --margin--outer: 1.5rem;
   --margin--inner: 1rem;
@@ -36,11 +42,24 @@ h1, h2, h3 {
   margin-bottom: max(3vh, 3rem);
 }
 
-p, a, li, blockquote, code {
+p, a, li, blockquote {
   font-family: var(--ff--other);
   color: var(--color--fg--accent);
   font-size: 1.2rem;
   /* line-height: 1.6rem; */
+}
+
+code {
+  color: var(--color--fg--light);
+  font-family: var(--ff--mono);
+  white-space: pre;
+}
+
+.code-demonstration {
+  background-color: var(--color--bg--accent);
+  border-radius: 10px;
+  padding: var(--margin--outer);
+  overflow: scroll;
 }
 
 .fa-brands {

@@ -41,43 +41,66 @@
       <h2 class="thoughts-title">My Thoughts</h2>
 
       <p class="following-paragraph">
-        My thoughts about the question here.
+        At first glance, this problem looks like it can be solved by recursion. Since everything inside a 
+        set of parentheses are multiplied by two, each parentheses can be thought of like a smaller
+        subproblem with () as the base case.
       </p>
 
+      <p class="following-paragraph">
+        However, I think there is a better way to solve this problem, without recursion. If I keep track of 
+        the "depth" of the current parentheses, I can use distribution to calculate the score instead.
+        Thus, <code>"("</code> will be my sign to increase the depth, and <code>")"</code> will be my sign 
+        to decrease depth. Furthermore, I only increase the score if there is a pair of empty parentheses.
+        I can do this by checking the last character of the list.
+      </p>
+
+      <p class="following-paragraph">
+        Next comes the issue of storing the depth. I can see that the score will result with 2^x, x being
+        the depth, instead, I can just store the depth as this value and avoid calculating it in real time.
+        I will start the depth as 0.5, so increasing it by a factor if two will give me 1.
+      </p>
+
+      <p class="following-paragraph">
+        Basically, my code will be as follows:
+      </p>
       <ol class="list--ordered">
         <li class="list__item">
-          This is an ordered list.
+          Declare total, and depth
         </li>
         <li class="list__item">
-          I can add list items :D
+          Make a look that iterates through the input
         </li>
+        <li class="list__item"> <br>
+          <ul class="unordered-list">
+            <li class="list__item">If I see <code>"("</code>, increase the depth</li>
+            <li class="list__item">
+              If I see <code>")"</code>, check if it's an empty parentheses (add to total if it is) and decrease
+              depth
+            </li>
+          </ul>
+        </li>
+        <li class="list__item">Return total</li>
       </ol>
 
-      <code class="code-demonstration">
-        def recursive(current, depth, remaining, memo):
-          if remaining == 0:
-              current = current + ")" * depth
-              memo.add(current)
-              return
-        
-          recursive(current + "(", depth + 1, remaining - 1, memo)
-          
-          if depth > 0:
-              recursive(current + ")", depth - 1, remaining, memo)
-            
-        result = set()
-        depth = 0
-        current = ""
-        remaining = n
-        result_list = []
-        
-        recursive(current, depth, remaining, result)
-        
-        for i in result:
-            result_list.append(i)
-        
-        return result_list
-      </code>
+      <p class="follwing-paragraph"> And here it is with actual code.</p>
+      <div class="code-demonstration">
+        <code>
+def scoreOfParentheses(self, s: str) -> int:
+  depth = 0.5
+  total = 0
+
+  for i in range(len(s)):
+      if s[i] == "(":
+          depth = depth * 2
+      elif s[i - 1] == "(":
+          total = total + depth
+          depth = depth / 2
+      else:
+          depth = depth / 2
+
+  return int(total)
+        </code>
+      </div>
     </section>
 
     <section class="page__reflection">
