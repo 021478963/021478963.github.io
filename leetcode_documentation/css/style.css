@@ -36,7 +36,7 @@ h1, h2, h3 {
   margin-bottom: max(3vh, 3rem);
 }
 
-p, a, li, blockquote {
+p, a, li, blockquote, code {
   font-family: var(--ff--other);
   color: var(--color--fg--accent);
   font-size: 1.2rem;
@@ -90,9 +90,9 @@ main {
   background-color: var(--color--bg--accent);
 }
 
-section {
-  /* text-align: justify; */
-}
+/* section {
+  text-align: justify;
+} */
 
 main > * {
   margin: var(--margin--inner) var(--margin--outer);

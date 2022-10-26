@@ -7,6 +7,10 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
   <link rel="stylesheet" href="../css/style.css">
   <link rel="icon" type="image/x-icon" href="../favicon.ico">
+  <!-- <link rel="stylesheet"
+      href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/default.min.css">
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js"></script>
+  <script>hljs.highlightAll();</script> -->
   <title>Generate Parentheses</title>
 </head>
 
@@ -24,7 +28,8 @@
         Honestly, it's been quite a long time, and I don't expect to solve it that quickly.
         Anyways, I found this question from the list under Pirate King's study guide.
       </p>
-
+      
+      <h2 class="question-title">The Question</h2>
       <blockquote class="question-content">
         Given n pairs of parentheses, write a function to generate all combinations of well-
         formed parentheses.
@@ -32,6 +37,8 @@
     </section>
 
     <section class="page-description">
+      <h2 class="thoughts-title">My Thoughts</h2>
+
       <p class="following-paragraph">
         Damn, I really am out of practice. My first thought after reading this question was,
         "This question is pretty hard..." Anways, something jumps out to me. If I look at the
@@ -68,31 +75,33 @@
         </li>
       </ol>
 
-      <code class="code-demonstration">
-        def recursive(current, depth, remaining, memo):
-          if remaining == 0:
-              current = current + ")" * depth
-              memo.add(current)
-              return
+      <pre>
+        <code class="code-demonstration language-python">
+          def recursive(current, depth, remaining, memo):
+            if remaining == 0:
+                current = current + ")" * depth
+                memo.add(current)
+                return
         
-          recursive(current + "(", depth + 1, remaining - 1, memo)
-          
-          if depth > 0:
-              recursive(current + ")", depth - 1, remaining, memo)
-            
-        result = set()
-        depth = 0
-        current = ""
-        remaining = n
-        result_list = []
+            recursive(current + "(", depth + 1, remaining - 1, memo)
         
-        recursive(current, depth, remaining, result)
+            if depth > 0:
+                recursive(current + ")", depth - 1, remaining, memo)
         
-        for i in result:
-            result_list.append(i)
+          result = set()
+          depth = 0
+          current = ""
+          remaining = n
+          result_list = []
         
-        return result_list
-      </code>
+          recursive(current, depth, remaining, result)
+        
+          for i in result:
+              result_list.append(i)
+        
+          return result_list
+        </code>
+      </pre>
 
       <p class="following-paragraph">
         IT WORKS! However, it's only 50% faster. I think I can do better than this. Right now, 
@@ -139,6 +148,12 @@
         90% faster! I think this is where I'm going to leave this question, I'm pretty content
         with my results. Time to move down the list of questions on PK's website...
       </p>
+    </section>
+
+    <section class="page__reflection">
+      <h2 class="reflection-title">My thoughts</h2>
+
+      <p class="following-paragraph"></p>
     </section>
   </main>
 </body>

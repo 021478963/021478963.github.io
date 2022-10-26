@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="icon" type="image/x-icon" href="../favicon.ico">
+  <title>Score of Parentheses</title>
+</head>
+
+<body>
+  <header>
+    <a href="https://leetcode.com/problems/score-of-parentheses/">
+      <h1 class="main-title">Score of Parentheses</h1>
+    </a>
+  </header>
+
+  <main>
+    <section class="page-info">
+      <p class="intro-paragraph">
+        I hate linear algebra.
+      </p>
+      
+      <h2 class="question-title">The Question</h2>
+      <div class="question-content">
+        <blockquote>
+          Given a balanced parentheses string s, return the score of the string. The score of a balanced 
+          parentheses string is based on the following rule:
+        </blockquote>
+        <ol class="list--ordered">
+          <li class="list__item">"()" has score 1.</li>
+          <li class="list__item">AB has score A + B, where A and B are balanced parentheses strings.</li>
+          <li class="list__item">(A) has score 2 * A, where A is a balanced parentheses string.</li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="page-description">
+      <h2 class="thoughts-title">My Thoughts</h2>
+
+      <p class="following-paragraph">
+        My thoughts about the question here.
+      </p>
+
+      <ol class="list--ordered">
+        <li class="list__item">
+          This is an ordered list.
+        </li>
+        <li class="list__item">
+          I can add list items :D
+        </li>
+      </ol>
+
+      <code class="code-demonstration">
+        def recursive(current, depth, remaining, memo):
+          if remaining == 0:
+              current = current + ")" * depth
+              memo.add(current)
+              return
+        
+          recursive(current + "(", depth + 1, remaining - 1, memo)
+          
+          if depth > 0:
+              recursive(current + ")", depth - 1, remaining, memo)
+            
+        result = set()
+        depth = 0
+        current = ""
+        remaining = n
+        result_list = []
+        
+        recursive(current, depth, remaining, result)
+        
+        for i in result:
+            result_list.append(i)
+        
+        return result_list
+      </code>
+    </section>
+
+    <section class="page__reflection">
+      <h2 class="reflection-title">Closing thoughts</h2>
+
+      <p class="following-paragraph"></p>
+    </section>
+  </main>
+</body>
+</html>
+
+
+<!-- 
+  header
+    main-title
+    header__nav
+    nav__link-group
+    nav__link__item
+  
+  section
+    page-info
+      intro-paragraph
+    page-description
+      following-paragraph
+      
+  list--ordered
+    list__item
+
+  code-demonstration
+
+  checklist:
+    1. title, main title
+    2. page info, intro paragraph
+    3. following paragraph
+ -->
