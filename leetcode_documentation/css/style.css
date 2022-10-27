@@ -58,6 +58,15 @@ p, a, li, blockquote {
   /* line-height: 1.6rem; */
 }
 
+a {
+  text-decoration: none;
+}
+
+a:hover, h1:hover {
+  color: white;
+  text-decoration: underline;
+}
+
 blockquote * {
   font-family: var(--ff--mono);
   font-size: 1rem;
@@ -92,7 +101,7 @@ code {
 }
 
 .fa-brands:hover {
-  color: var(--color--fg--accent);
+  color: white;
 }
 
 body {
@@ -132,6 +141,15 @@ main {
 /* section {
   text-align: justify;
 } */
+
+footer {
+  margin-top: var(--margin--outer);
+  padding: var(--margin--inner);
+  background-color: var(--color--bg--accent);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
 
 main > * {
   margin: var(--margin--inner) var(--margin--outer);
