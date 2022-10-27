@@ -75,33 +75,33 @@
         </li>
       </ol>
 
-      <pre>
-        <code class="code-demonstration language-python">
-          def recursive(current, depth, remaining, memo):
-            if remaining == 0:
-                current = current + ")" * depth
-                memo.add(current)
-                return
-        
-            recursive(current + "(", depth + 1, remaining - 1, memo)
-        
-            if depth > 0:
-                recursive(current + ")", depth - 1, remaining, memo)
-        
-          result = set()
-          depth = 0
-          current = ""
-          remaining = n
-          result_list = []
-        
-          recursive(current, depth, remaining, result)
-        
-          for i in result:
-              result_list.append(i)
-        
-          return result_list
+      <div class="code-demonstration">
+        <code>
+def recursive(current, depth, remaining, memo):
+  if remaining == 0:
+      current = current + ")" * depth
+      memo.add(current)
+      return
+
+  recursive(current + "(", depth + 1, remaining - 1, memo)
+
+  if depth > 0:
+      recursive(current + ")", depth - 1, remaining, memo)
+
+result = set()
+depth = 0
+current = ""
+remaining = n
+result_list = []
+
+recursive(current, depth, remaining, result)
+
+for i in result:
+    result_list.append(i)
+
+return result_list
         </code>
-      </pre>
+      </div>
 
       <p class="following-paragraph">
         IT WORKS! However, it's only 50% faster. I think I can do better than this. Right now, 
@@ -111,38 +111,39 @@
         2 * n, since each n will have an opening and closing parentheses.
       </p>
 
-      <code class="code-demonstration">
-        def recursive(currentpos, currentarray, depth, remaining, memo):
+      <div class="code-demonstration">
+        <code>
+def recursive(currentpos, currentarray, depth, remaining, memo):
+  if remaining == 0:
+      for i in range(depth):
+          currentarray[currentpos] = ")"
+          currentpos = currentpos + 1
+      memo.add("".join(currentarray))
+      return
 
-          if remaining == 0:
-              for i in range(depth):
-                  currentarray[currentpos] = ")"
-                  currentpos = currentpos + 1
-              memo.add("".join(currentarray))
-              return
-          
-          currentarray[currentpos] = "("
-          recursive(currentpos + 1, currentarray, depth + 1, remaining - 1, memo)
-          
-          if depth > 0:
-              currentarray[currentpos] = ")"
-              currentpos = currentpos + 1
-              recursive(currentpos, currentarray, depth - 1, remaining, memo)
-              
-        result = set()
-        depth = 0
-        currentpos = 0
-        currentarray = [None] * 2 * n
-        remaining = n
-        result_list = []
-        
-        recursive(currentpos, currentarray, depth, remaining, result)
-        
-        for i in result:
-            result_list.append(i)
-        
-        return result_list
-      </code>
+  currentarray[currentpos] = "("
+  recursive(currentpos + 1, currentarray, depth + 1, remaining - 1, memo)
+
+  if depth > 0:
+      currentarray[currentpos] = ")"
+      currentpos = currentpos + 1
+      recursive(currentpos, currentarray, depth - 1, remaining, memo)
+
+result = set()
+depth = 0
+currentpos = 0
+currentarray = [None] * 2 * n
+remaining = n
+result_list = []
+
+recursive(currentpos, currentarray, depth, remaining, result)
+
+for i in result:
+    result_list.append(i)
+
+return result_list
+        </code>
+      </div>
 
       <p class="following-paragraph">
         90% faster! I think this is where I'm going to leave this question, I'm pretty content

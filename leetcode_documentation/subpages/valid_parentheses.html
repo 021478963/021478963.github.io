@@ -93,25 +93,27 @@
         </li>
       </ol>
 
-      <code class="code-demonstration">
-        def valid_parentheses():
-        previous_brackets = []
-        
-        for i in s:
-            if i == '(' or i == '[' or i == '{':
-                previous_brackets.push(i)
-            elif i == ')':
-                if previous_brackets.pop() != '(':
-                    return False
-            elif i == ']':
-                if previous_brackets.pop() != '[':
-                    return False
-            else:
-                if previous_brackets.pop() != '{':
-                    return False
-                
-        return True
-      </code>
+      <div class="code-demonstration">
+        <code>
+def valid_parentheses():
+previous_brackets = []
+
+for i in s:
+    if i == '(' or i == '[' or i == '{':
+        previous_brackets.push(i)
+    elif i == ')':
+        if previous_brackets.pop() != '(':
+            return False
+    elif i == ']':
+        if previous_brackets.pop() != '[':
+            return False
+    else:
+        if previous_brackets.pop() != '{':
+            return False
+
+return True
+        </code>
+      </div>
 
       <p class="following-paragraph">
         I'm not sure why, but I assumed that the input would be a valid pair of parentheses. Once

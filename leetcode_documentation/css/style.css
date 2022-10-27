@@ -59,7 +59,7 @@ code {
   background-color: var(--color--bg--accent);
   border-radius: 10px;
   padding: var(--margin--outer);
-  overflow: scroll;
+  overflow: auto;
 }
 
 .fa-brands {
