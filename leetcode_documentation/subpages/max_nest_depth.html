@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="icon" type="image/x-icon" href="../favicon.ico">
+  <title> Maximum Nesting Depth of the Parentheses</title>
+</head>
+
+<body>
+  <header>
+    <a href="https://leetcode.com/problems/maximum-nesting-depth-of-the-parentheses/">
+      <h1 class="main-title"> Maximum Nesting Depth of the Parentheses</h1>
+    </a>
+    <a href="../index.html" class="top-nav">Home</a>
+  </header>
+
+  <main>
+    <section class="page-info">
+      <p class="intro-paragraph">
+        I think at this point I stop doing easy questions; I read the question and I instantly
+        knew how to solve it in some hacky way but it'll be fast... Also I have so much homework
+        to do but this is kinda fun
+      </p>
+      
+      <h2 class="question-title">The Question</h2>
+      <blockquote class="question-content">
+        A string is a valid parentheses string (denoted VPS) if it meets one of the following:
+        <br>
+        <ul class="list--unordered">
+          <li class="list__item">It is an empty string "", or a single character not equal to "(" or ")",</li>
+          <li class="list__item">It can be written as AB (A concatenated with B), where A and B are VPS's, or</li>
+          <li class="list__item">It can be written as (A), where A is a VPS.</li>
+        </ul>
+        We can similarly define the nesting depth depth(S) of any VPS S as follows:
+        <ul class="list--unordered">
+          <li class="list__item">depth("") = 0</li>
+          <li class="list__item">depth(C) = 0, where C is a string with a single character not equal to "(" or ")".</li>
+          <li class="list__item">depth(A + B) = max(depth(A), depth(B)), where A and B are VPS's.</li>
+          <li class="list__item">depth("(" + A + ")") = 1 + depth(A), where A is a VPS.</li>
+        </ul>
+        For example, "", "()()", and "()(()())" are VPS's (with nesting depths 0, 1, and 2), and ")(" and "(()" are not VPS's.
+        <br>
+        Given a VPS represented as string s, return the nesting depth of s.
+      </blockquote>
+    </section>
+
+    <section class="page-description">
+      <h2 class="thoughts-title">My Thoughts</h2>
+
+      <p class="following-paragraph">
+        I don't think the part about the characters is useful at all. If we look at the example,
+        we can see that the depth of <code>"()(()())"</code> is two, even though there are no 
+        characters between the parentheses. Then, I can just use a depth counter to keep track of
+        the highest depth that I see.
+      </p>
+
+      <p class="following-paragraph">
+        Since depth can only increase when we go deeper, I will check if the current depth exceeds
+        the deepest depth we've seen so far every time we see an open parentheses.
+      </p>
+
+      <p class="following-paragraph">Thus, my code is as follows:</p>
+      <ol class="list--ordered">
+        <li class="list__item">
+          Make a variable to keep track of the maximum depth and the current depth
+        </li>
+        <li class="list__item">
+          Iterate through all items in the input
+        </li>
+        <li class="list__item">
+          Adjust depth according to charactere, and if current iteration chracter is 
+          <code>"("</code>, check if it's deeper
+        </li>
+        <li class="list__item">
+          Return the deepest depth we are in
+        </li>
+      </ol>
+
+      <div class="code-demonstration">
+        <code>
+def recursive(current, depth, remaining, memo):
+  if remaining == 0:
+      current = current + ")" * depth
+      memo.add(current)
+      return
+
+  recursive(current + "(", depth + 1, remaining - 1, memo)
+
+  if depth > 0:
+      recursive(current + ")", depth - 1, remaining, memo)
+
+result = set()
+depth = 0
+current = ""
+remaining = n
+result_list = []
+
+recursive(current, depth, remaining, result)
+
+for i in result:
+    result_list.append(i)
+
+return result_list
+        </code>
+      </div>
+    </section>
+
+    <section class="page__reflection">
+      <h2 class="reflection-title">Closing thoughts</h2>
+      <h3 class="complexity-title">Runtime Complexity: O(n)</h3>
+      <p class="following-paragraph">
+        I go through all the elements once in the array, and worst case scenario I do one operation
+        for each character.
+      </p>
+      <h3 class="complexity-title">Space Complexity: O(1)</h3>
+      <p class="following-paragraph">
+        I only use two variables regardless of how big the input is.
+      </p>
+      <p class="following-paragraph">
+        I found that question pretty easy, but the entire time I was terrified that I missed
+        something, which is weird. Anyways, I also think it's kinda weird how runtime can change
+        so much with the same submission. I ran the code 3 times, and got a deviation of 50%, 
+        which made a huge difference in the runtime comparison.
+        Also, I will start to write the time and space complexity in the closing thoughts.
+      </p>
+    </section>
+  </main>
+</body>
+</html>
+
+
+<!-- 
+  header
+    main-title
+    header__nav
+    nav__link-group
+    nav__link__item
+  
+  section
+    page-info
+      intro-paragraph
+    page-description
+      following-paragraph
+      
+  list--ordered
+    list__item
+
+  code-demonstration
+
+  checklist:
+    1. title, main title
+    2. page info, intro paragraph
+    3. following paragraph
+ -->

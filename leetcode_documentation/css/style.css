@@ -34,12 +34,21 @@
 h1, h2, h3 {
   font-family: var(--ff--title);
   color: var(--color--fg--light);
+}
+
+h2 {
   font-size: 2rem;
+}
+
+h3 {
+  font-size: 1.5rem
 }
 
 .main-title {
   font-size: 3rem;
-  margin-bottom: max(3vh, 3rem);
+  margin-left: calc(2 * var(--margin--outer));
+  margin-right: calc(2 * var(--margin--outer));
+  margin-bottom: var(--margin--inner);
 }
 
 p, a, li, blockquote {
@@ -49,10 +58,21 @@ p, a, li, blockquote {
   /* line-height: 1.6rem; */
 }
 
+blockquote * {
+  font-family: var(--ff--mono);
+  font-size: 1rem;
+}
+
+blockquote {
+  font-family: var(--ff--mono);
+  font-size: 1rem;
+}
+
 code {
   color: var(--color--fg--light);
   font-family: var(--ff--mono);
   white-space: pre;
+  font-size: 1rem;
 }
 
 .code-demonstration {
@@ -81,7 +101,7 @@ body {
 
 header {
   text-align: center;
-  width: clamp(10rem, 100%, 40rem);
+  max-width: 40rem;
   margin: 10vh auto max(5rem, 5vh);
 }
 
@@ -117,7 +137,7 @@ main > * {
   margin: var(--margin--inner) var(--margin--outer);
 }
 
-.list--ordered > * {
+.list--ordered > *, .list--unordered > * {
   margin: var(--margin--outer) var(--margin--outer);
 }
 
