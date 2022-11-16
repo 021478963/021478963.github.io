@@ -155,7 +155,7 @@ a {
   margin-bottom: var(--margin--inner);
 }
 
-.faq__question__body:not(:last), .contact__body:not(:last) {
+.faq__question__body:not(:last-child), .contact__body {
   margin-bottom: var(--margin--inner);
 }
 
