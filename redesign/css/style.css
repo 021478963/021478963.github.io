@@ -1,0 +1,43 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.content__container {
+  scroll-snap-type: y mandatory;
+  height: 100vh;
+  overflow-y: scroll;
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.content__container::-webkit-scrollbar {
+  display: none;
+}
+
+.fullpage {
+  min-height: 100vh;
+  scroll-snap-align: start;
+}
+
+/* .second {
+  height: 100vh;
+  background-color: grey;
+  overflow: scroll;
+} */
+
+/* .second__item {
+  height: 150vh;
+  background-color: blue;
+} */
+
+/* .third h1 {
+  transform: translateY(100vh);
+  transition: transform 1s ease-in-out;
+}
+
+.third.active h1 {
+  transform: translateY(0);
+} */
