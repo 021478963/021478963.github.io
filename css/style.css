@@ -344,6 +344,7 @@ body {
 }
 
 .skills__list {
+  width: var(--width);
   position: relative;
   left: 0%;
   opacity: 0;
@@ -466,6 +467,7 @@ body {
   left: 0%;
   opacity: 0;
   filter: blur(8px);
+  width: var(--width);
 }
 
 .contact__form:not(:last-child) {
@@ -514,5 +516,19 @@ body {
   :root {
     --fs--title--main: 3.5rem;
     --fs--title: 2.5rem;
+  }
+}
+
+@supports (-webkit-touch-callout: none) {
+  .fullpage {
+    height: 80vh;
+  }
+
+  .content__container {
+    height: 80vh;
+  }
+
+  .fullpage.projects {
+    height: 80vh;
   }
 }
