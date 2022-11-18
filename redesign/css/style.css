@@ -38,7 +38,62 @@
   }
 }
 
+/* page dots */
+
+.page-dots {
+  position: fixed;
+  /* background-color: black; */
+  right: var(--margin--outer);
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1;
+}
+
+.page-dots__list {
+  list-style-type: none;
+  display: flex;
+  gap: 2rem;
+  flex-direction: column;
+}
+
+.page-dots__li {
+  /* border: 2px solid black; */
+  background-color: var(--color--fg--main);
+  padding: 0.5rem;
+  border-radius: 50%;
+  transition: all 500ms ease-in-out;
+}
+
+.page-dots__li.active {
+  /* border: 2px solid black; */
+  background-color: var(--color--bg--main);
+  box-shadow: 0 0 0 5px var(--color--fg--main);
+  padding: 0.5rem;
+  border-radius: 50%;
+}
+
+.invert .page-dots__li {
+  /* border: 2px solid black; */
+  background-color: var(--color--bg--main);
+  padding: 0.5rem;
+  border-radius: 50%;
+  transition: all 500ms ease-in-out;
+}
+
+.invert .page-dots__li.active {
+  /* border: 2px solid black; */
+  background-color: var(--color--fg--main);
+  box-shadow: 0 0 0 5px var(--color--bg--main);
+  padding: 0.5rem;
+  border-radius: 50%;
+}
+
+/* finish page dots */
 /* page scrolling */
+
+html {
+  scroll-behavior: smooth;
+}
 
 .content__container {
   scroll-snap-type: y mandatory;
@@ -72,7 +127,7 @@
   color: var(--color--fg--main);
   font-size: var(--fs--title);
   /* font-size: 10rem; */
-  width: calc(100% - 2 * var(--margin--outer));
+  width: calc(100% - 3 * var(--margin--outer));
 }
 
 .body {
@@ -107,7 +162,7 @@
 
 .landing__greeting {
   position: absolute;
-  width: calc(100% - 2 * var(--margin--outer));
+  width: calc(100% - 3 * var(--margin--outer));
   top: 20%;
 }
 
@@ -213,7 +268,7 @@
 
 
 .introduction__wrapper {
-  width: calc(100% - 2 * var(--margin--outer));
+  width: calc(100% - 3 * var(--margin--outer));
   max-width: var(--max-width);
   position: relative;
   left: 0%;
@@ -291,7 +346,7 @@
   opacity: 0;
   position: relative;
   left: 0;
-  width: calc(100% - 2 * var(--margin--outer));
+  width: calc(100% - 3 * var(--margin--outer));
 }
 
 .active .projects__wrapper {
