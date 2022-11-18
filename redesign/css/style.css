@@ -98,10 +98,10 @@
   /* max-height: 10px; */
   /* overflow: hidden; */
   /* display: inline-block; */
-  left: var(--margin--outer);
+  /* left: var(--margin--outer); */
   opacity: 0;
   filter: blur(8px);
-  position: absolute;
+  /* position: absolute; */
   animation: fade-out-blur 1s ease-out forwards;
 }
 
@@ -111,6 +111,10 @@
   top: 20%;
 }
 
+.landing__greeting > * {
+  margin: calc(0.5 * var(--margin--inner)) var(--margin--outer);
+}
+
 .landing.active .landing__title:nth-child(1) {
   animation: fade-in-blur 1s ease-out forwards;
 }
@@ -118,7 +122,7 @@
 .landing.active .landing__title:nth-child(3) {
   animation: fade-in-blur 500ms ease-out forwards 4.5s;
   /* 4.5 */
-  top: 20rem;
+  /* top: 20rem; */
 }
 
 @keyframes fade-in-blur {
@@ -139,11 +143,11 @@
   background-color: var(--color--fg--main);
   color: var(--color--bg--main);
   display: inline-block;
-  position: absolute;
+  /* position: absolute; */
   border-radius: var(--border-radius);
-  top: 6rem;
-  margin: 0;
-  left: var(--margin--outer);
+  /* top: 6rem; */
+  /* margin: 0; */
+  /* left: var(--margin--outer); */
 }
 
 .landing.active .landing__main__title {
@@ -371,14 +375,6 @@
     --fs--title--main: 6rem;
     --fs--title: 2.5rem;
   }
-
-  .landing.active .landing__title:nth-child(3) {
-    top: 17rem;
-  }
-
-  .landing__main__title {
-    top: 5rem;
-  }
 }
 
 @media screen and (max-width: 900px) {
@@ -389,29 +385,18 @@
     --margin--outer: 1.5rem;
     --margin--inner: 1rem;
   }
-
-  .landing.active .landing__title:nth-child(3) {
-    top: 12rem;
-  }
-
-  .landing__main__title {
-    top: 4rem;
-  }
 }
 
-@media screen and (max-width: 616px) {
+@media screen and (max-width: 600px) {
   :root {
-    --fs--title--main: 4rem;
-  }
-
-  .landing.active .landing__title:nth-child(3) {
-    top: 13rem;
+    --fs--title--main: 3.5rem;
+    --fs--title: 2.5rem;
   }
 }
 
-@media screen and (max-width: 561px) {
+@media screen and (max-width: 446px) {
 
-  .landing.active .landing__title:nth-child(3) {
-    top: 16.5rem;
+  .landing__greeting {
+    top: 10%;
   }
 }
