@@ -21,7 +21,7 @@ const projectObserver = new IntersectionObserver(entries => {
   });
 }, {
   // threshold: 1,
-  rootMargin: "-600px 0px -400px 0px",
+  rootMargin: "-400px 0px -400px 0px",
 });
 
 projects.forEach(project => {
