@@ -5,9 +5,26 @@ const observer = new IntersectionObserver(entries => {
     entry.target.classList.toggle("active", entry.isIntersecting);
   });
 }, {
-  threshold: 1,
+  threshold: 0.3,
 });
 
 sections.forEach(section => {
   observer.observe(section);
+});
+
+const projects = document.querySelectorAll(".project__entry");
+
+const projectObserver = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    entry.target.classList.toggle("visible", entry.isIntersecting);
+    console.log(entry);
+  });
+}, {
+  // threshold: 1,
+  rootMargin: "-600px 0px -400px 0px",
+});
+
+projects.forEach(project => {
+  // console.log(project);
+  projectObserver.observe(project);
 });
