@@ -4,85 +4,154 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
   <link rel="stylesheet" href="css/style.css">
-  <title>American Pharoh | Impressive Animals</title>
+  <title>Allan He-Chen</title>
+  <script defer src="js/scroll.js"></script>
+  <script defer src="js/bubble.js"></script>
 </head>
-
 <body>
+  <main>
+    <div id="bubble"></div>
+    <nav class="page-dots">
+      <ul class="page-dots__list">
+        <li class="page-dots__li" onclick="redirect('landing')"></li>
+        <li class="page-dots__li" onclick="redirect('about')"></li>
+        <li class="page-dots__li" onclick="redirect('whatIKnow')"></li>
+        <li class="page-dots__li" onclick="redirect('projects')"></li>
+        <li class="page-dots__li" onclick="redirect('contact')"></li>
+      </ul>
+    </nav>
+    <!-- <nav class="sidebar">
+      <ul class="sidebar__list">
+        <li class="sidebar__li"><a href="" class="sidebar__li__link">Home</a></li>
+        <li class="sidebar__li"><a href="" class="sidebar__li__link">About Me</a></li>
+        <li class="sidebar__li"><a href="" class="sidebar__li__link">My Skills</a></li>
+        <li class="sidebar__li"><a href="" class="sidebar__li__link">My Projects</a></li>
+        <li class="sidebar__li"><a href="" class="sidebar__li__link">Contact Me</a></li>
+      </ul>
+    </nav> -->
 
-<!-- <header>
-  <div class="header--max-width">
-    <h1 class="header__title">Influencial Animals</h1>
-    <button class="header__button"><i class="fa-solid fa-circle-half-stroke"></i></button>
-  </div>
-</header> -->
+    <div class="content__container">
+      <!-- landing page -->
+      <div class="fullpage__wrapper">
+        <section id="landing" class="fullpage landing fullpage__end">
+          <div class="landing__greeting">
+            <h2 class="landing__title title">Hey, my name is</h2>
+            <h1 class="landing__main__title main__title">Allan He-Chen</h1>
+            <h2 class="landing__title title">and I'm so excited to meet you!</h2>
+          </div>
+        </section>
+        <div class="fullpage__end"></div>
+      </div>
 
-<div class="header__background"></div>
+      <!-- introduction page -->
+      <div class="fullpage__wrapper">
+        <section id="about" class="fullpage introduction">
+          <h2 class="introduction__title main__title title">About me</h2>
+          <div class="introduction__wrapper">
+            <p class="introduction__body body">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam, error quia aspernatur sapiente, earum alias voluptates similique odio eos iure voluptatibus id distinctio omnis odit quod illum deleniti delectus corrupti.
+            </p>
+          </div>
+        </section>
+      </div>
 
-<main>
-  <div class="landing">
-    <div class="card card--full">
-      <img src="img/American-Pharoah.jpg" alt="American Pharoah" class="card-img--full">
-    </div>
-    <div class="landing__group">
-      <h2 class="article__title">American Pharoh</h2>
-      <div class="card card__length">
-        <img src="" alt="" class="card__img--thumbnail">
-        <p class="card__description">15 minute read</p>
+      <!-- skills page -->
+      <div class="fullpage__wrapper">
+        <section id="whatIKnow" class="fullpage skills">
+          <h2 class="skills__title main__title title">What I know</h2>
+          <ul class="skills__list">
+            <li class="skills__item body">Javascript</li>
+            <li class="skills__item body">CSS</li>
+            <li class="skills__item body">HTML</li>
+          </ul>
+          <h2 class="skills__title main__title title">What I'm working on</h2>
+          <ul class="skills__list">
+            <li class="skills__item body">Django</li>
+            <li class="skills__item body">Node.js</li>
+            <li class="skills__item body">SQL</li>
+          </ul>
+        </section>
+      </div>
+
+      <!-- projects page -->
+      <div class="fullpage__wrapper">
+        <section id="projects" class="fullpage projects">
+          <h2 class="projects__title main__title title">My Projects</h2>
+          <div class="projects__wrapper">
+            <div class="project__padding"></div>
+            <div class="project__entry">
+              <img src="" alt="" class="project__entry__image">
+              <h3 class="project__entry__title title">Good idea 1</h3>
+              <p class="project__entry__body body">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut ullam in quibusdam earum ut sunt quia facere enim est voluptas quod animi, molestias sint reiciendis ipsa eveniet quasi maiores nostrum.
+              </p>
+            </div>
+            <div class="project__entry">
+              <img src="" alt="" class="project__entry__image">
+              <h3 class="project__entry__title title">Good idea 1</h3>
+              <p class="project__entry__body body">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut ullam in quibusdam earum ut sunt quia facere enim est voluptas quod animi, molestias sint reiciendis ipsa eveniet quasi maiores nostrum.
+              </p>
+            </div>
+            <div class="project__entry">
+              <img src="" alt="" class="project__entry__image">
+              <h3 class="project__entry__title title">Good idea 1</h3>
+              <p class="project__entry__body body">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut ullam in quibusdam earum ut sunt quia facere enim est voluptas quod animi, molestias sint reiciendis ipsa eveniet quasi maiores nostrum.
+              </p>
+            </div>
+            <div class="project__entry">
+              <img src="" alt="" class="project__entry__image">
+              <h3 class="project__entry__title title">Good idea 1</h3>
+              <p class="project__entry__body body">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut ullam in quibusdam earum ut sunt quia facere enim est voluptas quod animi, molestias sint reiciendis ipsa eveniet quasi maiores nostrum.
+              </p>
+            </div>
+            <div class="project__entry">
+              <img src="" alt="" class="project__entry__image">
+              <h3 class="project__entry__title title">Good idea 1</h3>
+              <p class="project__entry__body body">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut ullam in quibusdam earum ut sunt quia facere enim est voluptas quod animi, molestias sint reiciendis ipsa eveniet quasi maiores nostrum.
+              </p>
+            </div>
+            <div class="project__entry">
+              <img src="" alt="" class="project__entry__image">
+              <h3 class="project__entry__title title">Good idea 1</h3>
+              <p class="project__entry__body body">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut ullam in quibusdam earum ut sunt quia facere enim est voluptas quod animi, molestias sint reiciendis ipsa eveniet quasi maiores nostrum.
+              </p>
+            </div>
+            <div class="project__entry">
+              <img src="" alt="" class="project__entry__image">
+              <h3 class="project__entry__title title">Good idea 1</h3>
+              <p class="project__entry__body body">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut ullam in quibusdam earum ut sunt quia facere enim est voluptas quod animi, molestias sint reiciendis ipsa eveniet quasi maiores nostrum.
+              </p>
+            </div>
+            <div class="project__entry">
+              <img src="" alt="" class="project__entry__image">
+              <h3 class="project__entry__title title">Good idea 1</h3>
+              <p class="project__entry__body body">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut ullam in quibusdam earum ut sunt quia facere enim est voluptas quod animi, molestias sint reiciendis ipsa eveniet quasi maiores nostrum.
+              </p>
+            </div>
+            <div class="project__padding"></div>
+            <!-- <div class="project__padding"></div> -->
+          </div>
+        </section>
+      </div>
+
+      <!-- contact page -->
+      <div class="fullpage__wrapper">
+        <section id="contact" class="fullpage contact">
+          <h2 class="contact__title main__title title">Contact Me!</h2>
+          <div class="contact__form">
+            <p class="body">hello</p>
+          </div>
+        </section>
       </div>
     </div>
-  </div>
-  <section class="article__content">
-    <p class="article__paragraph">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae inventore dolore est ipsum nesciunt corporis voluptatum recusandae odio laudantium ea praesentium cumque vel laboriosam, fuga molestiae blanditiis magni doloribus repellat ratione, ab officiis, ducimus perferendis dicta. Ea reiciendis placeat iste, deserunt possimus aut labore quas iure voluptate id minus consequuntur rerum architecto unde aliquam in omnis. Reiciendis vitae ab alias modi fugit vero, labore, doloremque ea hic similique dignissimos assumenda eos corrupti quisquam perspiciatis libero nesciunt id veniam dolores cumque.</p>
-    <p class="article__paragraph">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Excepturi architecto dignissimos culpa earum, accusamus dolore asperiores dolorem expedita vel fuga officia aspernatur. Hic error ut fuga. Obcaecati necessitatibus voluptatem iste architecto nostrum rem error eveniet quisquam aut cupiditate fugiat consequatur unde, vel ut fuga, quos, suscipit fugit distinctio quibusdam ipsa aliquam voluptates praesentium! Animi, blanditiis explicabo laboriosam, nam asperiores architecto rem aperiam ad porro corrupti ratione quos neque modi assumenda cum vero dolorum quis. Libero, reprehenderit natus sint repudiandae exercitationem quis dignissimos enim voluptatibus, sequi incidunt magni. Dicta ullam quod vel voluptatem tempora ipsam enim, delectus quasi sint itaque ex!</p>
-    <p class="article__paragraph">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Assumenda, id vel inventore itaque aspernatur animi. Eligendi vitae illo corporis commodi ipsam iusto tenetur, mollitia delectus veniam doloremque velit aut dolores fuga? Ad veniam, recusandae magni consectetur optio eos vel? Vitae nihil aliquam, natus vero adipisci, ea veritatis expedita omnis tenetur amet dolore, cum voluptas. Eius, fugit. Velit explicabo veniam molestias quam laudantium sint, officia consequuntur error consectetur quasi eos temporibus eligendi tempora dicta porro nostrum minima sed? Adipisci, iure debitis vero fugiat nostrum autem! Error voluptatum consequatur, placeat ab libero nesciunt facilis atque doloribus nam quam cum obcaecati sed perferendis sapiente tenetur ducimus accusantium, iste fugit alias et deleniti illo! Necessitatibus velit nostrum voluptates dicta odio. Voluptatem, necessitatibus. Pariatur, eum.</p>
-  </section>
-  <div class="card">
-    <div class="card__group card--margin-bottom">
-      <img src="img/thumbnail.jpg" alt="" class="card__img--thumbnail">
-      <h2 class="card__title">Allan He-Chen</h2>
-    </div>
-    <p class="card__description">
-      Allan He-Chen is a second year Computer Science student currently crying over CSS.
-    </p>
-  </div>
-
-  <h2 class="related-content__title">Related Content</h2>
-  <section class="related-content">
-    <a href="">
-      <div class="card">
-        <div class="card__group">
-          <img src="img/Cecil.jpg" alt="Cecil the Lion" class="card__img--side">
-          <h2 class="card__title">Cecil the Lion</h2>
-        </div>
-        <p class="card__description"></p>
-      </div>
-    </a>
-    <a href="">
-      <div class="card">
-        <div class="card__group">
-          <img src="img/Grecia.jpg" alt="Grecia" class="card__img--side">
-          <h2 class="card__title">Grecia</h2>
-        </div>
-        <p class="card__description"></p>
-      </div>
-    </a>
-    <a href="">
-      <div class="card">
-        <div class="card__group">
-          <img src="img/Tilikum.jpg" alt="Tilikum" class="card__img--side">
-          <h2 class="card__title">Tilikum</h2>
-        </div>
-        <p class="card__description"></p>
-      </div>
-    </a>
-  </section>
-</main>
-
-<footer>
-  <p class="footer__text">Made with great pain.</p>
-</footer>
-
+  </main>
 </body>
 </html>
