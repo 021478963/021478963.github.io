@@ -7,9 +7,11 @@
   <link rel="stylesheet" href="css/style.css">
   <title>Allan He-Chen</title>
   <script defer src="js/scroll.js"></script>
+  <script defer src="js/bubble.js"></script>
 </head>
 <body>
   <main>
+    <div id="bubble"></div>
     <nav class="page-dots">
       <ul class="page-dots__list">
         <li class="page-dots__li" onclick="redirect('landing')"></li>
@@ -32,13 +34,14 @@
     <div class="content__container">
       <!-- landing page -->
       <div class="fullpage__wrapper">
-        <section id="landing" class="fullpage landing">
+        <section id="landing" class="fullpage landing fullpage__end">
           <div class="landing__greeting">
             <h2 class="landing__title title">Hey, my name is</h2>
             <h1 class="landing__main__title main__title">Allan He-Chen</h1>
             <h2 class="landing__title title">and I'm so excited to meet you!</h2>
           </div>
         </section>
+        <div class="fullpage__end"></div>
       </div>
 
       <!-- introduction page -->

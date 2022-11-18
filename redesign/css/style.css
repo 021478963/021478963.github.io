@@ -20,7 +20,7 @@
   --fs--title: 3rem;
   --fs--title--main: 7rem;
   --fs--body: 2rem;
-  --color--fg--main: #0D1321;
+  --color--fg--main: #0c100a;
   --color--fg--accent: #347FC4;
   --color--bg--main: #F3EFF5;
   --color--bg--accent: ;
@@ -38,6 +38,48 @@
   }
 }
 
+/* bubble */
+
+#bubble {
+  position: absolute;
+  padding: 15vh;
+  background-color: var(--color--bg--main);
+  mix-blend-mode: difference;
+  z-index: 10;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  filter: blur(8px);
+  border-radius: 50%;
+}
+
+#bubble.visible {
+  animation: bubble 2s ease-in-out forwards;
+}
+
+#bubble.popped {
+  animation: bubble-pop 2s ease-in-out forwards;
+}
+
+@keyframes bubble {
+  100% {
+    opacity: 1;
+    filter: blur(0);
+    box-shadow: 0 0 4px 1px var(--color--bg--main);
+  }
+}
+
+@keyframes bubble-pop {
+  0% {
+    opacity: 1;
+    filter: blur(0px);
+    box-shadow: 0 0 4px 1px var(--color--bg--main);
+  }
+  100% {
+    opacity: 0;
+    filter: blur(8px);
+  }
+}
+/* finish bubble */
 /* page dots */
 
 .page-dots {
@@ -468,3 +510,9 @@ html {
     top: 10%;
   }
 } */
+
+/* page dividers */
+
+
+
+/* finish page dividers */

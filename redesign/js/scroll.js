@@ -40,7 +40,7 @@ sections.forEach(section => {
 const projectObserver = new IntersectionObserver(entries => {
   entries.forEach(entry => {
     entry.target.classList.toggle("visible", entry.isIntersecting);
-    console.log(entry);
+    // console.log(entry);
   });
 }, {
   rootMargin: "-500px 0px -100px 0px",
