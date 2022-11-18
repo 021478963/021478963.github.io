@@ -117,6 +117,9 @@ html {
   /* max-width: var(--max-width); */
   margin: 0 auto;
   background-color: var(--color--bg--main);
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
 }
 
 /* end page scrolling */
@@ -162,9 +165,9 @@ html {
 }
 
 .landing__greeting {
-  position: absolute;
+  /* position: absolute; */
   width: calc(100% - 3 * var(--margin--outer));
-  top: 20%;
+  /* top: 20%; */
 }
 
 .landing__greeting > * {
@@ -459,9 +462,9 @@ html {
   }
 }
 
-@media screen and (max-width: 446px) {
+/* @media screen and (max-width: 446px) {
 
   .landing__greeting {
     top: 10%;
   }
-}
+} */
