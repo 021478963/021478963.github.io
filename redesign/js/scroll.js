@@ -20,11 +20,9 @@ const projectObserver = new IntersectionObserver(entries => {
     console.log(entry);
   });
 }, {
-  // threshold: 1,
-  rootMargin: "-400px 0px -400px 0px",
+  rootMargin: "-500px 0px -100px 0px",
 });
 
 projects.forEach(project => {
-  // console.log(project);
   projectObserver.observe(project);
 });
