@@ -17,8 +17,9 @@ var currentTimeout = null;
 
 const observer = new IntersectionObserver(entries => {
   entries.forEach(entry => {
-    entry.target.classList.toggle("active", entry.isIntersecting);
     if (entry.isIntersecting) {
+      entry.target.classList.add("active", entry.isIntersecting);
+      
       if (current) {
         current.classList.remove("active");
       }

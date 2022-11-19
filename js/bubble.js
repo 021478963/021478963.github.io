@@ -89,16 +89,18 @@ function bubble() {
   //   pop();
   //   return;
   // } else 
-  if (state && distance < interactionDistance) {
-    if (mouseX > x) {
-      dx = dx - (1 / distance);
-    } else {
-      dx = dx + (1 / distance);
-    }
-    if (mouseY > y) {
-      dy = dy - (1 / distance);
-    } else {
-      dy = dy + (1 / distance);
+  if (state) {
+    if (distance < interactionDistance) {
+      if (mouseX > x) {
+        dx = dx - (1 / distance);
+      } else {
+        dx = dx + (1 / distance);
+      }
+      if (mouseY > y) {
+        dy = dy - (1 / distance);
+      } else {
+        dy = dy + (1 / distance);
+      }
     }
   } else {
     if (mouseX < x) {
@@ -121,12 +123,6 @@ function pop() {
   myBubble.classList.add("popped");
   myBubble.classList.remove("visible");
 }
-
-setTimeout(() => {
-  if (bubbleEnabled) {
-    initialize();
-  }
-}, 8000);
 
 window.addEventListener("pointermove", event => {
   mouseX = event.pageX;

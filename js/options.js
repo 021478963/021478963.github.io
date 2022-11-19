@@ -61,7 +61,7 @@ function updateBubbleOption(checked) {
       if (bubbleEnabled) {
         initialize();
       }
-    }, 8000);
+    }, 3000);
     bubbleEnabled = true;
   } else {
     bubbleEnabled = false;
@@ -79,14 +79,17 @@ function updateDirection(checked) {
 
 pageSnap.addEventListener('change', event => {
   updatePageSnap(event.target.checked);
+  createCookie();
 });
 
 bubbleOption.addEventListener('change', event => {
   updateBubbleOption(event.target.checked);
+  createCookie();
 });
 
 direction.addEventListener('change', event => {
   updateDirection(event.target.checked);
+  createCookie();
 });
 
 
@@ -94,7 +97,6 @@ document.addEventListener("pointerdown", event => {
   if (optionsOpen && event.target == optionsWrapper) {
     optionsWrapper.classList.remove("active");
     optionsOpen = false;
-    createCookie();
   }
 });
 
