@@ -1,14 +1,3 @@
-#test {
-  height: 100vh;
-  width: 100vw;
-  position: absolute;
-  top: 0;
-  left: 0;
-  mix-blend-mode: difference;
-  background-color: white;
-  z-index: 1;
-}
-
 @font-face {
   font-family: "Lexend";
   src: url(../fonts/Lexend-VariableFont_wght.ttf);
@@ -187,12 +176,13 @@
   position: absolute;
   padding: 15vh;
   background-color: white;
-  /* mix-blend-mode: difference; */
-  /* z-index: 10; */
+  mix-blend-mode: difference;
+  z-index: 10;
   transform: translate(-50%, -50%);
   opacity: 0;
   filter: blur(8px);
   border-radius: 50%;
+  pointer-events: none;
 }
 
 #bubble.visible {
@@ -310,6 +300,22 @@ body {
   display: flex;
   justify-content: center;
   flex-direction: column;
+}
+
+.fullpage__wrapper {
+  position: relative;
+}
+
+.fullpage__image {
+  width: 100vw;
+  position: absolute;
+  bottom: 0;
+  z-index: 1;
+  height: 25%;
+}
+
+.fullpage__image.top {
+  top: 0;
 }
 
 /* end page scrolling */
