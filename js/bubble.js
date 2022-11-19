@@ -72,8 +72,8 @@ function bubble() {
   }
 
   // update dx and dy due to friction
-  dx = 0.99 * dx;
-  dy = 0.99 * dy;
+  // dx = 0.99 * dx;
+  // dy = 0.99 * dy;
 
   // update element;
   myBubble.style.top = `${y}px`;
