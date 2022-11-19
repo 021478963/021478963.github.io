@@ -135,7 +135,7 @@
 .floating-links {
   position: absolute;
   right: 0;
-  z-index: 1;
+  z-index: 11;
   margin: var(--margin--outer) calc(2 * var(--margin--outer));
   padding: var(--margin--inner) var(--margin--outer);
   background-color: var(--color--fg--main);
@@ -148,6 +148,9 @@
   list-style-type: none;
   display: flex;
   gap: var(--margin--outer);
+}
+
+.floating-links__li a {
   color: var(--color--bg--main);
   transition: color 500ms ease-in-out;
 }
@@ -156,7 +159,7 @@
   background-color: var(--color--bg--main);
 }
 
-.invert .floating-links__list {
+.invert .floating-links__li a {
   color: var(--color--fg--main);
 }
 
