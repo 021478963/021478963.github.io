@@ -27,7 +27,8 @@ var topBorder = window.innerHeight - radius;
 var bottomBorder = radius;
 var leftBorder = radius;
 var rightBorder = window.innerWidth - radius;
-var state = Math.floor(Math.random() * 2);
+var state = true;
+var bubbleEnabled = true;
 
 
 function initialize() {
@@ -88,44 +89,43 @@ function bubble() {
   //   pop();
   //   return;
   // } else 
-  if (state) {
-    if (mouseX < x) {
-      dx = dx - (1 / distance);
-    } else {
-      dx = dx + (1 / distance);
-    }
-
-    if (mouseY < y) {
-      dy = dy - (1 / distance);
-    } else {
-      dy = dy + (1 / distance);
-    }
-  } else if (distance < interactionDistance) {
+  if (state && distance < interactionDistance) {
     if (mouseX > x) {
       dx = dx - (1 / distance);
     } else {
       dx = dx + (1 / distance);
     }
-
     if (mouseY > y) {
       dy = dy - (1 / distance);
     } else {
       dy = dy + (1 / distance);
     }
+  } else {
+    if (mouseX < x) {
+      dx = dx - (1 / distance);
+    } else {
+      dx = dx + (1 / distance);
+    }
+    if (mouseY < y) {
+      dy = dy - (1 / distance);
+    } else {
+      dy = dy + (1 / distance);
+    }
   }
-  requestAnimationFrame(bubble);
+  if (bubbleEnabled) {
+    requestAnimationFrame(bubble);
+  }
 }
 
 function pop() {
   myBubble.classList.add("popped");
   myBubble.classList.remove("visible");
-  setTimeout(() => {
-    initialize();
-  }, 5000);
 }
 
 setTimeout(() => {
-  initialize();
+  if (bubbleEnabled) {
+    initialize();
+  }
 }, 8000);
 
 window.addEventListener("pointermove", event => {
@@ -140,12 +140,4 @@ window.addEventListener("resize", event => {
   leftBorder = radius;
   rightBorder = window.innerWidth - radius;
   radius = 0.1 * window.innerHeight;
-});
-
-window.addEventListener("pointerdown", event => {
-  if (state) {
-    state = 0;
-  } else {
-    state = 1;
-  }
 });

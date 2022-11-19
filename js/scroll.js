@@ -2,6 +2,7 @@ const sections = document.querySelectorAll(".fullpage");
 const projects = document.querySelectorAll(".project__entry");
 const dots = document.querySelectorAll(".page-dots__li");
 const dotsList = document.querySelector(".page-dots");
+const options = document.querySelector(".options__button");
 const floatingLinks = document.querySelector(".floating-links");
 const sectionDots = {
   "landing": 0,
@@ -28,9 +29,11 @@ const observer = new IntersectionObserver(entries => {
       if (activeId % 2 == 1) {
         dotsList.classList.add("invert");
         floatingLinks.classList.add("invert");
+        options.classList.add("invert");
       } else {
         dotsList.classList.remove("invert");
         floatingLinks.classList.remove("invert");
+        options.classList.remove("invert");
       }
 
       refreshDots();

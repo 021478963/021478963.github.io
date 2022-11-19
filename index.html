@@ -30,10 +30,30 @@
   <title>Allan He-Chen | Computer Science Student</title>
   <script defer src="js/scroll.js"></script>
   <script defer src="js/bubble.js"></script>
+  <script defer src="js/options.js"></script>
 </head>
 <body>
   <main>
     <div id="bubble"></div>
+    <div class="options__button">
+      <i class="fa-sharp fa-solid fa-gear"></i>
+    </div>
+    <div class="options__wrapper">
+      <div class="options">
+        <div class="options__group">
+          <label class="options__label body" for="page-snap">Page Snapping</label>
+          <input class="options__input" type="checkbox" id="page-snap" name="page-snap" checked>
+        </div>
+        <div class="options__group">
+          <label class="options__label body" for="bubble-enabled">Bubble</label>
+          <input class="options__input" type="checkbox" id="bubble-enabled" name="bubble" checked>
+        </div>
+        <div class="options__group">
+          <label class="options__label body" for="direction">Bubble Repel</label>
+          <input class="options__input" type="checkbox" id="direction" name="direction" checked>
+        </div>
+      </div>
+    </div>
     <nav class="page-dots">
       <ul class="page-dots__list">
         <li class="page-dots__li" onclick="redirect('landing')"></li>
@@ -43,7 +63,6 @@
         <li class="page-dots__li" onclick="redirect('contact')"></li>
       </ul>
     </nav>
-
     <nav class="floating-links">
       <ul class="floating-links__list">
         <li class="floating-links__li" onclick="redirect('contact')"><i class="fa-brands fa-github big"></i></li>
@@ -61,7 +80,6 @@
             <h2 class="landing__title title">and I'm excited to meet you!</h2>
           </div>
         </section>
-        <!-- <img src="img/page1.svg"> -->
       </div>
 
       <!-- introduction page -->

@@ -29,6 +29,7 @@
   --width: calc(100% - 3 * var(--margin--outer));
   --max-width: 50rem;
   --border-radius: 7px;
+  --scroll: mandatory;
 }
 
 @keyframes introduction-slide {
@@ -46,6 +47,89 @@
 }
 
 /* finish fa icons */
+/* options */
+
+.options__wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 10;
+  visibility: hidden;
+  opacity: 0;
+  transition: all 500ms ease-in-out;
+}
+
+.active.options__wrapper {
+  opacity: 1;
+  visibility: visible;
+}
+
+.options {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  background-color: var(--color--fg--main);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: var(--margin--inner) var(--margin--outer);
+  border-radius: var(--border-radius);
+}
+
+.options__label.body {
+  color: var(--color--bg--main);
+  /* display: inline-block; */
+  margin-right: var(--margin--inner);
+}
+
+.options__group {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.options__group:not(:last-of-type) {
+  margin-bottom: var(--margin--inner);
+}
+
+.options__button {
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  background-color: var(--color--fg--main);
+  color: var(--color--bg--main);
+  padding: 1rem;
+  border-radius: 0 var(--border-radius) 0 0;
+  transition: color 500ms ease-in-out, background-color 500ms ease-in-out;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  font-size: 2rem;
+  z-index: 1;
+}
+
+.options__button:hover {
+  background-color: var(--color--bg--main);
+  color: var(--color--fg--main);
+}
+
+.invert.options__button {
+  background-color: var(--color--bg--main);
+  color: var(--color--fg--main);
+}
+
+.invert.options__button:hover {
+    background-color: var(--color--fg--main);
+    color: var(--color--bg--main);
+}
+
+/* finish options */
 /* floating links */
 
 .floating-links {
@@ -188,7 +272,7 @@ body {
 }
 
 .content__container {
-  scroll-snap-type: y mandatory;
+  scroll-snap-type: y var(--scroll);
   height: 100vh;
   overflow-y: scroll;
   -ms-overflow-style: none;  /* IE and Edge */
