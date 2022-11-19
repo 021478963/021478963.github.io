@@ -1,3 +1,14 @@
+#test {
+  height: 100vh;
+  width: 100vw;
+  position: absolute;
+  top: 0;
+  left: 0;
+  mix-blend-mode: difference;
+  background-color: white;
+  z-index: 1;
+}
+
 @font-face {
   font-family: "Lexend";
   src: url(../fonts/Lexend-VariableFont_wght.ttf);
@@ -175,9 +186,9 @@
 #bubble {
   position: absolute;
   padding: 15vh;
-  background-color: var(--color--bg--main);
-  mix-blend-mode: difference;
-  z-index: 10;
+  background-color: white;
+  /* mix-blend-mode: difference; */
+  /* z-index: 10; */
   transform: translate(-50%, -50%);
   opacity: 0;
   filter: blur(8px);
