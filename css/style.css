@@ -174,7 +174,7 @@
 
 #bubble {
   position: absolute;
-  padding: 15vh;
+  padding: max(5rem, 15vmin);
   background-color: white;
   mix-blend-mode: difference;
   z-index: 15;
@@ -226,7 +226,7 @@ main {
   right: -3rem;
   top: 50%;
   transform: translateY(-50%);
-  z-index: 1;
+  z-index: 5;
   transition: right 500ms ease-in-out;
 }
 
@@ -317,7 +317,7 @@ main {
   position: absolute;
   bottom: 0;
   z-index: 1;
-  height: 25%;
+  height: 30vh;
   pointer-events: none;
 }
 
