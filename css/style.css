@@ -101,11 +101,11 @@
 .options__button {
   position: absolute;
   bottom: 0px;
-  left: 0px;
+  right: 0px;
   background-color: var(--color--fg--main);
   color: var(--color--bg--main);
   padding: 1rem;
-  border-radius: 0 var(--border-radius) 0 0;
+  border-radius: var(--border-radius) 0 0 0;
   transition: color 500ms ease-in-out, background-color 500ms ease-in-out;
   cursor: pointer;
   display: flex;
