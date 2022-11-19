@@ -39,6 +39,50 @@
   }
 }
 
+/* fa icons */
+
+.big {
+  font-size: 3rem;
+}
+
+/* finish fa icons */
+/* floating links */
+
+.floating-links {
+  position: absolute;
+  right: 0;
+  z-index: 1;
+  margin: var(--margin--outer) calc(2 * var(--margin--outer));
+  padding: var(--margin--inner) var(--margin--outer);
+  background-color: var(--color--fg--main);
+  border-radius: var(--border-radius);
+  transition: background-color 500ms ease-in-out;
+  display: none;
+}
+
+.floating-links__list {
+  list-style-type: none;
+  display: flex;
+  gap: var(--margin--outer);
+  color: var(--color--bg--main);
+  transition: color 500ms ease-in-out;
+}
+
+.invert.floating-links {
+  background-color: var(--color--bg--main);
+}
+
+.invert .floating-links__list {
+  color: var(--color--fg--main);
+}
+
+@media screen and (min-width: 1300px) {
+  .floating-links {
+    display: inline-block;
+  }
+}
+
+/* finish floating links */
 /* bubble */
 
 #bubble {

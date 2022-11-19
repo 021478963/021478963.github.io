@@ -27,6 +27,7 @@ var topBorder = window.innerHeight - radius;
 var bottomBorder = radius;
 var leftBorder = radius;
 var rightBorder = window.innerWidth - radius;
+var state = Math.floor(Math.random() * 2);
 
 
 function initialize() {
@@ -87,7 +88,19 @@ function bubble() {
   //   pop();
   //   return;
   // } else 
-  if (distance < interactionDistance) {
+  if (state) {
+    if (mouseX < x) {
+      dx = dx - (1 / distance);
+    } else {
+      dx = dx + (1 / distance);
+    }
+
+    if (mouseY < y) {
+      dy = dy - (1 / distance);
+    } else {
+      dy = dy + (1 / distance);
+    }
+  } else if (distance < interactionDistance) {
     if (mouseX > x) {
       dx = dx - (1 / distance);
     } else {
@@ -127,4 +140,12 @@ window.addEventListener("resize", event => {
   leftBorder = radius;
   rightBorder = window.innerWidth - radius;
   radius = 0.1 * window.innerHeight;
+});
+
+window.addEventListener("pointerdown", event => {
+  if (state) {
+    state = 0;
+  } else {
+    state = 1;
+  }
 });
