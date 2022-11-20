@@ -32,23 +32,20 @@ var bubbleEnabled = true;
 var autoMove = null;
 
 function initialize() {
-  x = window.innerWidth >> 1;
-  y = window.innerHeight >> 1;
+  x = Math.random() * topBorder;
+  y = Math.random() * rightBorder;
   dx = Math.random() * 2 - 1;
   dy = Math.random() * 2 - 1;
   myBubble.classList.remove("popped");
   myBubble.classList.add("visible");
   requestAnimationFrame(bubble);
+  last = new Date();
+  last.getTime();
 }
 
 function bubble() {
   // get time elapsed by subtracting last time from currentTime time
-  if (!last) {
-    last = new Date();
-    last.getTime();
-  }
-  currentTime = new Date();
-  currentTime = currentTime.getTime();
+  currentTime = Date.now();
   dt = currentTime - last;
   last = currentTime;
 
@@ -78,8 +75,8 @@ function bubble() {
     dy = 0.99 * dy;
 
     // set new dx and dy with mouse position
-    let distanceX = x - mouseX;
-    let distanceY = y - mouseY;
+    const distanceX = x - mouseX;
+    const distanceY = y - mouseY;
     const distance = Math.sqrt(distanceX * distanceX + distanceY * distanceY);
 
     if (state) {
@@ -108,10 +105,9 @@ function bubble() {
       }
     }
   }
-
   // update element;
   myBubble.style.top = `${y}px`;
-  myBubble.style.left= `${x}px`;
+  myBubble.style.left = `${x}px`;
 
   if (bubbleEnabled) {
     requestAnimationFrame(bubble);

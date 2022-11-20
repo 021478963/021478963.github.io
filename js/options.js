@@ -2,7 +2,6 @@ const pageSnap = document.getElementById("page-snap");
 const bubbleOption = document.getElementById("bubble-enabled");
 const direction = document.getElementById("direction");
 const optionsWrapper = document.querySelector(".options__wrapper");
-const allOptions = [pageSnap, bubbleOption, direction];
 
 var optionsOpen = false;
 
