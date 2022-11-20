@@ -29,7 +29,7 @@ var leftBorder = radius;
 var rightBorder = window.innerWidth - radius;
 var state = true;
 var bubbleEnabled = true;
-
+var autoMove = null;
 
 function initialize() {
   x = window.innerWidth >> 1;
@@ -73,47 +73,46 @@ function bubble() {
   }
 
   // update dx and dy due to friction
-  dx = 0.99 * dx;
-  dy = 0.99 * dy;
+  if (!autoMove) {
+    dx = 0.99 * dx;
+    dy = 0.99 * dy;
 
-  // update element;
-  myBubble.style.top = `${y}px`;
-  myBubble.style.left= `${x}px`;
+    // set new dx and dy with mouse position
+    let distanceX = x - mouseX;
+    let distanceY = y - mouseY;
+    const distance = Math.sqrt(distanceX * distanceX + distanceY * distanceY);
 
-  // set new dx and dy with mouse position
-  let distanceX = x - mouseX;
-  let distanceY = y - mouseY;
-  const distance = Math.sqrt(distanceX * distanceX + distanceY * distanceY);
-
-  // if (distance < 0.5 * radius) {
-  //   pop();
-  //   return;
-  // } else 
-  if (state) {
-    if (distance < interactionDistance) {
-      if (mouseX > x) {
+    if (state) {
+      if (distance < interactionDistance) {
+        if (mouseX > x) {
+          dx = dx - (1 / distance);
+        } else {
+          dx = dx + (1 / distance);
+        }
+        if (mouseY > y) {
+          dy = dy - (1 / distance);
+        } else {
+          dy = dy + (1 / distance);
+        }
+      }
+    } else {
+      if (mouseX < x) {
         dx = dx - (1 / distance);
       } else {
         dx = dx + (1 / distance);
       }
-      if (mouseY > y) {
+      if (mouseY < y) {
         dy = dy - (1 / distance);
       } else {
         dy = dy + (1 / distance);
       }
     }
-  } else {
-    if (mouseX < x) {
-      dx = dx - (1 / distance);
-    } else {
-      dx = dx + (1 / distance);
-    }
-    if (mouseY < y) {
-      dy = dy - (1 / distance);
-    } else {
-      dy = dy + (1 / distance);
-    }
   }
+
+  // update element;
+  myBubble.style.top = `${y}px`;
+  myBubble.style.left= `${x}px`;
+
   if (bubbleEnabled) {
     requestAnimationFrame(bubble);
   }
@@ -128,6 +127,10 @@ window.addEventListener("pointermove", event => {
   mouseX = event.pageX;
   mouseY = event.pageY;
   refreshDots();
+  if (autoMove) {
+    clearTimeout(autoMove);
+    autoMove = null;
+  }
 });
 
 window.addEventListener("resize", event => {
@@ -136,4 +139,13 @@ window.addEventListener("resize", event => {
   leftBorder = radius;
   rightBorder = window.innerWidth - radius;
   radius = 0.1 * window.innerHeight;
+});
+
+document.querySelector("body").addEventListener("pointerleave", event => {
+  console.log("no pointer");
+  if (autoMove) {
+    clearTimeout(autoMove);
+  }
+  autoMove = setTimeout(() => {
+  }, 5000);
 });
