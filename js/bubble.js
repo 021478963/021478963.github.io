@@ -142,10 +142,11 @@ window.addEventListener("resize", event => {
 });
 
 document.querySelector("body").addEventListener("pointerleave", event => {
-  console.log("no pointer");
   if (autoMove) {
     clearTimeout(autoMove);
   }
   autoMove = setTimeout(() => {
   }, 5000);
 });
+
+console.log("hey, I see you there");
