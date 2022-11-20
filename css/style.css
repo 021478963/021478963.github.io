@@ -326,14 +326,14 @@ main {
 .fullpage__image {
   width: 100vw;
   position: absolute;
-  bottom: 0;
+  bottom: -5px;
   z-index: 1;
   height: 30vh;
   pointer-events: none;
 }
 
 .fullpage__image.top {
-  top: 0;
+  top: -5px;
 }
 
 /* end page scrolling */

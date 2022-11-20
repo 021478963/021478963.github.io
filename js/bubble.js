@@ -32,15 +32,15 @@ var bubbleEnabled = true;
 var autoMove = null;
 
 function initialize() {
-  x = Math.random() * topBorder;
-  y = Math.random() * rightBorder;
-  dx = Math.random() * 2 - 1;
-  dy = Math.random() * 2 - 1;
+  x = Math.random() * 0.5 * topBorder;
+  y = Math.random() * 0.5 * rightBorder;
+  dx = Math.random() - 1;
+  dy = Math.random() - 1;
   myBubble.classList.remove("popped");
   myBubble.classList.add("visible");
   requestAnimationFrame(bubble);
-  last = new Date();
-  last.getTime();
+  last = Date.now();
+  autoMove = true;
 }
 
 function bubble() {
@@ -134,7 +134,7 @@ window.addEventListener("resize", event => {
   bottomBorder = radius;
   leftBorder = radius;
   rightBorder = window.innerWidth - radius;
-  radius = 0.1 * window.innerHeight;
+  radius = 0.1 * Math.min(window.innerHeight, window.innerWidth);
 });
 
 document.querySelector("body").addEventListener("pointerleave", event => {

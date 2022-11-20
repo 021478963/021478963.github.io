@@ -7,6 +7,21 @@ var optionsOpen = false;
 
 function readCookie() {
   let cookies = document.cookie.split("; ");
+  console.log(cookies);
+  if (cookies.length == 1) {
+    if (window.innerHeight <= 600) {
+    cookies = ["pageSnap=false"];
+    console.log("hello");
+    }
+    state = false;
+    direction.checked = false;
+    cookies.push("direction=false")
+    setTimeout(() => {
+      state = true;
+      direction.checked = true;
+    }, 10000);
+  }
+
   cookies.forEach(element => {
     let offset = element.indexOf('=');
     let name = element.substr(0, offset);
