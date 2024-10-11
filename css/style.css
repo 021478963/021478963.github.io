@@ -21,7 +21,7 @@
   --fs--title--main: 7rem;
   --fs--title--sub: 3.5rem;
   --fs--small: 1.5rem;
-  --fs--body: 2rem;
+  --fs--body: 1.5rem;
   --color--fg--main: #141411;
   --color--fg--accent: #347fc4;
   --color--bg--main: #ebebee;
@@ -712,7 +712,7 @@ main {
   :root {
     --fs--title--main: 4.5rem;
     --fs--title: 2.5rem;
-    --fs--body: 1.7rem;
+    --fs--body: 1.5rem;
     --margin--outer: 1.5rem;
     --margin--inner: 1rem;
   }
