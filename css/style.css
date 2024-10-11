@@ -405,6 +405,10 @@ main {
   animation: fade-in-blur 500ms ease-out forwards 4.5s;
 }
 
+.landing.active .landing__title:nth-child(4) {
+  animation: fade-in-blur 500ms ease-out forwards 5s;
+}
+
 @keyframes fade-in-blur {
   100% {
     filter: unset;

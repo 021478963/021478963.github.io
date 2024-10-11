@@ -10,20 +10,20 @@ function readCookie() {
   console.log(cookies);
   if (cookies.length == 1) {
     if (window.innerHeight <= 600) {
-    cookies = ["pageSnap=false"];
-    console.log("hello");
+      cookies = ["pageSnap=false"];
     }
     state = false;
     direction.checked = false;
-    cookies.push("direction=false")
-    setTimeout(() => {
-      state = true;
-      direction.checked = true;
-    }, 10000);
+    cookies.push("direction=true");
+    // disable initial auto attract and strictly repel insetad
+    // setTimeout(() => {
+    //   state = true;
+    //   direction.checked = true;
+    // }, 10000);
   }
 
-  cookies.forEach(element => {
-    let offset = element.indexOf('=');
+  cookies.forEach((element) => {
+    let offset = element.indexOf("=");
     let name = element.substr(0, offset);
     let value = element.substr(offset + 1);
     switch (name) {
@@ -53,7 +53,7 @@ function readCookie() {
   updatePageSnap(pageSnap.checked);
   updateBubbleOption(bubbleOption.checked);
   updateDirection(direction.checked);
-};
+}
 
 function createCookie() {
   document.cookie = `pageSnap=${pageSnap.checked}`;
@@ -63,9 +63,9 @@ function createCookie() {
 
 function updatePageSnap(checked) {
   if (checked === true) {
-    document.documentElement.style.setProperty('--scroll', 'mandatory');
+    document.documentElement.style.setProperty("--scroll", "mandatory");
   } else {
-    document.documentElement.style.setProperty('--scroll', 'none');
+    document.documentElement.style.setProperty("--scroll", "none");
   }
 }
 
@@ -80,7 +80,7 @@ function updateBubbleOption(checked) {
   } else {
     bubbleEnabled = false;
     pop();
-  };
+  }
 }
 
 function updateDirection(checked) {
@@ -91,32 +91,33 @@ function updateDirection(checked) {
   }
 }
 
-pageSnap.addEventListener('change', event => {
+pageSnap.addEventListener("change", (event) => {
   updatePageSnap(event.target.checked);
   createCookie();
 });
 
-bubbleOption.addEventListener('change', event => {
+bubbleOption.addEventListener("change", (event) => {
   updateBubbleOption(event.target.checked);
   createCookie();
 });
 
-direction.addEventListener('change', event => {
+direction.addEventListener("change", (event) => {
   updateDirection(event.target.checked);
   createCookie();
 });
 
-
-document.addEventListener("pointerdown", event => {
+document.addEventListener("pointerdown", (event) => {
   if (optionsOpen && event.target == optionsWrapper) {
     optionsWrapper.classList.remove("active");
     optionsOpen = false;
   }
 });
 
-document.querySelector(".options__button").addEventListener("pointerdown", event => {
-  optionsWrapper.classList.add("active");
-  optionsOpen = true;
-})
+document
+  .querySelector(".options__button")
+  .addEventListener("pointerdown", (event) => {
+    optionsWrapper.classList.add("active");
+    optionsOpen = true;
+  });
 
 readCookie();
