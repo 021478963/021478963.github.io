@@ -1,228 +1,281 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="author" content="Allan He-Chen" />
-    <meta name="description" content="Allan He-Chen's portfolio" />
-    <meta
-      name="keywords"
-      content="Allan He-Chen, personal website, portfolio, allanhechen"
-    />
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="author" content="Allan He-Chen" />
+        <meta name="description" content="Allan He-Chen's portfolio" />
+        <meta
+            name="keywords"
+            content="Allan He-Chen, personal website, portfolio, allanhechen"
+        />
 
-    <meta
-      property="og:title"
-      content="Allan He-Chen | Computer Science Student"
-    />
-    <meta property="og:type" content="website" />
-    <meta property="og:image" content="/img/og_picture.jpg" />
-    <meta property="og:url" content="https://allanhechen.github.io/" />
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta property="twitter:domain" content="allanhechen.github.io" />
-    <meta property="twitter:url" content="https://allanhechen.github.io/" />
-    <meta
-      name="twitter:title"
-      content="Allan He-Chen | Computer Science Student"
-    />
-    <!-- <meta name="twitter:description" content="Allan He-Chen's personal website"> -->
-    <meta name="twitter:image" content="img/og_picture.jpg" />
+        <meta
+            property="og:title"
+            content="Allan He-Chen | Computer Science Student"
+        />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content="/img/og_picture.jpg" />
+        <meta property="og:url" content="https://allanhechen.github.io/" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta property="twitter:domain" content="allanhechen.github.io" />
+        <meta property="twitter:url" content="https://allanhechen.github.io/" />
+        <meta
+            name="twitter:title"
+            content="Allan He-Chen | Computer Science Student"
+        />
+        <!-- <meta name="twitter:description" content="Allan He-Chen's personal website"> -->
+        <meta name="twitter:image" content="img/og_picture.jpg" />
 
-    <link rel="stylesheet" href="css/style.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
-      integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
-    <link
-      rel="apple-touch-icon"
-      sizes="180x180"
-      href="icons/apple-touch-icon.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="32x32"
-      href="icons/favicon-32x32.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="16x16"
-      href="icons/favicon-16x16.png"
-    />
-    <link rel="shortcut icon" href="icons/favicon.ico" />
-    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+        <link rel="stylesheet" href="css/style.css" />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+            integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+        />
+        <link
+            rel="apple-touch-icon"
+            sizes="180x180"
+            href="icons/apple-touch-icon.png"
+        />
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="32x32"
+            href="icons/favicon-32x32.png"
+        />
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="16x16"
+            href="icons/favicon-16x16.png"
+        />
+        <link rel="shortcut icon" href="icons/favicon.ico" />
+        <link rel="icon" href="/favicon.ico" type="image/x-icon" />
 
-    <title>Allan He-Chen | Computer Science Student</title>
-    <script defer src="js/scroll.js"></script>
-    <script defer src="js/bubble.js"></script>
-    <script defer src="js/options.js"></script>
-  </head>
-  <body>
-    <main>
-      <div id="bubble"></div>
-      <div class="options__button">
-        <i class="fa-sharp fa-solid fa-gear"></i>
-      </div>
-      <div class="options__wrapper">
-        <div class="options">
-          <div class="options__group">
-            <label class="options__label body" for="page-snap"
-              >Page Snapping</label
-            >
-            <input
-              class="options__input"
-              type="checkbox"
-              id="page-snap"
-              name="page-snap"
-              checked
-            />
-          </div>
-          <div class="options__group">
-            <label class="options__label body" for="bubble-enabled"
-              >Bubble</label
-            >
-            <input
-              class="options__input"
-              type="checkbox"
-              id="bubble-enabled"
-              name="bubble"
-              checked
-            />
-          </div>
-          <div class="options__group">
-            <label class="options__label body" for="direction"
-              >Bubble Repel</label
-            >
-            <input
-              class="options__input"
-              type="checkbox"
-              id="direction"
-              name="direction"
-              checked
-            />
-          </div>
-        </div>
-      </div>
-      <nav class="page-dots">
-        <ul class="page-dots__list">
-          <li class="page-dots__li" onclick="redirect('landing')"></li>
-          <li class="page-dots__li" onclick="redirect('about')"></li>
-          <li class="page-dots__li" onclick="redirect('whatIKnow')"></li>
-          <li class="page-dots__li" onclick="redirect('projects')"></li>
-          <li class="page-dots__li" onclick="redirect('contact')"></li>
-        </ul>
-      </nav>
-      <nav class="floating-links">
-        <ul class="floating-links__list">
-          <li class="floating-links__li">
-            <a href="https://github.com/allanhechen/"
-              ><i class="fa-brands fa-github big"></i
-            ></a>
-          </li>
-          <li class="floating-links__li">
-            <a href="https://www.linkedin.com/in/allan-he-chen/"
-              ><i class="fa-brands fa-linkedin-in big"></i
-            ></a>
-          </li>
-          <!-- <li class="floating-links__li" onclick="redirect('contact')"><i class="fa-brands fa-discord big"></i></li> -->
-        </ul>
-      </nav>
-      <div class="content__container">
-        <!-- landing page -->
-        <div class="fullpage__wrapper">
-          <section id="landing" class="fullpage landing nointeract">
-            <div class="landing__greeting">
-              <h2 class="landing__title title">Hey, my name is</h2>
-              <h1 class="landing__main__title main__title">Allan He-Chen</h1>
-              <h2 class="landing__title title">and I'm excited to meet you!</h2>
-              <h2 class="landing__title body">
-                (by the way the bubble runs away from your cursor)
-              </h2>
+        <title>Allan He-Chen | Computer Science Student</title>
+        <script defer src="js/scroll.js"></script>
+        <script defer src="js/bubble.js"></script>
+        <script defer src="js/options.js"></script>
+    </head>
+    <body>
+        <main>
+            <div id="bubble"></div>
+            <div class="options__button">
+                <i class="fa-sharp fa-solid fa-gear"></i>
             </div>
-          </section>
-          <img
-            src="img/landing_wave.svg"
-            alt=""
-            class="fullpage__image bottom"
-          />
-        </div>
-
-        <!-- introduction page -->
-        <div class="fullpage__wrapper">
-          <section id="about" class="fullpage introduction nointeract">
-            <h2 class="introduction__title main__title title">About me</h2>
-            <div class="introduction__wrapper">
-              <p class="introduction__body body">
-                I'm a passionate and results-driven Computer Science student at
-                TMU with a strong GPA of 4.26/4.33.
-                <br />
-                <br />
-                I'm working towards becoming a full-stack developer, but I'm
-                also dabbling in some hardware projects. Check out my lightsaber
-                creation below!
-                <br />
-                <br />
-                I'm currently seeking a software engineering role for Winter
-                2025, but I'm also keen to explore opportunities in DevOps,
-                AI/ML, and embedded programming.
-              </p>
+            <div class="options__wrapper">
+                <div class="options">
+                    <div class="options__group">
+                        <label class="options__label body" for="page-snap"
+                            >Page Snapping</label
+                        >
+                        <input
+                            class="options__input"
+                            type="checkbox"
+                            id="page-snap"
+                            name="page-snap"
+                            checked
+                        />
+                    </div>
+                    <div class="options__group">
+                        <label class="options__label body" for="bubble-enabled"
+                            >Bubble</label
+                        >
+                        <input
+                            class="options__input"
+                            type="checkbox"
+                            id="bubble-enabled"
+                            name="bubble"
+                            checked
+                        />
+                    </div>
+                    <div class="options__group">
+                        <label class="options__label body" for="direction"
+                            >Bubble Repel</label
+                        >
+                        <input
+                            class="options__input"
+                            type="checkbox"
+                            id="direction"
+                            name="direction"
+                            checked
+                        />
+                    </div>
+                </div>
             </div>
-          </section>
-          <!-- <img src="img/about_wave.svg" alt="" class="fullpage__image bottom"> -->
-        </div>
+            <nav class="page-dots">
+                <ul class="page-dots__list">
+                    <li
+                        class="page-dots__li"
+                        onclick="redirect('landing')"
+                    ></li>
+                    <li class="page-dots__li" onclick="redirect('about')"></li>
+                    <li
+                        class="page-dots__li"
+                        onclick="redirect('whatIKnow')"
+                    ></li>
+                    <li
+                        class="page-dots__li"
+                        onclick="redirect('projects')"
+                    ></li>
+                    <li
+                        class="page-dots__li"
+                        onclick="redirect('contact')"
+                    ></li>
+                </ul>
+            </nav>
+            <nav class="floating-links">
+                <ul class="floating-links__list">
+                    <li class="floating-links__li">
+                        <a href="https://github.com/allanhechen/"
+                            ><i class="fa-brands fa-github big"></i
+                        ></a>
+                    </li>
+                    <li class="floating-links__li">
+                        <a href="https://www.linkedin.com/in/allan-he-chen/"
+                            ><i class="fa-brands fa-linkedin-in big"></i
+                        ></a>
+                    </li>
+                    <!-- <li class="floating-links__li" onclick="redirect('contact')"><i class="fa-brands fa-discord big"></i></li> -->
+                </ul>
+            </nav>
+            <div class="content__container">
+                <!-- landing page -->
+                <div class="fullpage__wrapper">
+                    <section id="landing" class="fullpage landing nointeract">
+                        <div class="landing__greeting">
+                            <h2 class="landing__title title">
+                                Hey, my name is
+                            </h2>
+                            <h1 class="landing__main__title main__title">
+                                Allan He-Chen
+                            </h1>
+                            <h2 class="landing__title title">
+                                and I'm excited to meet you!
+                            </h2>
+                            <h2 class="landing__title body">
+                                (by the way the bubble runs away from your
+                                cursor)
+                            </h2>
+                        </div>
+                    </section>
+                    <img
+                        src="img/landing_wave.svg"
+                        alt=""
+                        class="fullpage__image bottom"
+                    />
+                </div>
 
-        <!-- skills page -->
-        <div class="fullpage__wrapper">
-          <img src="img/know_wave.svg" alt="" class="fullpage__image top" />
-          <section id="whatIKnow" class="fullpage skills nointeract">
-            <h2 class="skills__title sub__title title">What I know</h2>
-            <ul class="skills__list">
-              <li class="skills__item body">OOP</li>
-              <li class="skills__item body">Functional Programming</li>
-              <li class="skills__item body">Scripting Languages</li>
-              <li class="skills__item body">Databases (SQL and noSQL)</li>
-              <li class="skills__item body">API Development</li>
-              <li class="skills__item body">Git</li>
-            </ul>
-            <h2 class="skills__title sub__title title">My Experience</h2>
-            <h3 class="skills__title title">Ontario Power Generation</h3>
-            <p class="skills__title small">
-              Supply Chain Data Analyst | May 2023 - Dec 2023
-            </p>
-            <ul class="experience__list">
-              <li class="experience__item body">Achieved a grade of 99/100</li>
-              <li class="experience__item body">
-                Custom tool in Python using pandas, NumPy, and pyodbc to
-                generate SQL queries to fit data together
-              </li>
-              <li class="experience__item body">
-                Led a data cleanup initiative to fix over 3,700 problematic
-                entries
-              </li>
-              <li class="experience__item body">
-                Automated 3+ hours a week of manual tasks by automating them
-                using Python and MS Access
-              </li>
-            </ul>
-          </section>
+                <!-- introduction page -->
+                <div class="fullpage__wrapper">
+                    <section
+                        id="about"
+                        class="fullpage introduction nointeract"
+                    >
+                        <h2 class="introduction__title main__title title">
+                            About me
+                        </h2>
+                        <div class="introduction__wrapper">
+                            <p class="introduction__body body">
+                                I'm a passionate and results-driven Computer
+                                Science student at TMU with a strong GPA of
+                                4.26/4.33.
+                                <br />
+                                <br />
+                                I'm working towards becoming a software
+                                engineer, but I've still got a long way to go.
+                                My current project is to create a web app that
+                                helps students decide which courses to choose
+                                during uni.
+                                <br />
+                                <br />
+                                I'm currently seeking a software engineering
+                                role for Summer 2025!
+                            </p>
+                        </div>
+                    </section>
+                    <!-- <img src="img/about_wave.svg" alt="" class="fullpage__image bottom"> -->
+                </div>
 
-          <img
-            src="img/about_wave_bottom.svg"
-            alt=""
-            class="fullpage__image bottom"
-          />
-        </div>
+                <!-- skills page -->
+                <div class="fullpage__wrapper">
+                    <img
+                        src="img/know_wave.svg"
+                        alt=""
+                        class="fullpage__image top"
+                    />
+                    <section id="whatIKnow" class="fullpage skills nointeract">
+                        <h2 class="skills__title sub__title title">
+                            What I know
+                        </h2>
+                        <ul class="skills__list">
+                            <li class="skills__item body">OOP</li>
+                            <li class="skills__item body">
+                                Functional Programming
+                            </li>
+                            <li class="skills__item body">
+                                Scripting Languages
+                            </li>
+                            <li class="skills__item body">
+                                Databases (SQL and noSQL)
+                            </li>
+                            <li class="skills__item body">API Development</li>
+                            <li class="skills__item body">Git</li>
+                        </ul>
+                        <h2 class="skills__title sub__title title">
+                            My Experience
+                        </h2>
+                        <h3 class="skills__title title">Ensemble Travel</h3>
+                        <p class="skills__title small">
+                            Software Engineer Intern | Jan 2025 - Apr 2025
+                        </p>
+                        <ul class="experience__list">
+                            <li class="experience__item small">
+                                This is a future placement!
+                            </li>
+                        </ul>
+                        <h3 class="skills__title title">
+                            Ontario Power Generation
+                        </h3>
+                        <p class="skills__title small">
+                            Data Analyst Intern | May 2023 - Dec 2023
+                        </p>
+                        <ul class="experience__list">
+                            <li class="experience__item small">
+                                Custom tool in Python using pandas, NumPy, and
+                                pyodbc to generate SQL queries to fit data
+                                together
+                            </li>
+                            <li class="experience__item small">
+                                Led a data cleanup initiative to fix over 3,700
+                                problematic entries
+                            </li>
+                            <li class="experience__item small">
+                                Automated 3+ hours a week of manual tasks by
+                                automating them using Python and MS Access
+                            </li>
+                        </ul>
+                    </section>
 
-        <!-- projects page -->
-        <div class="fullpage__wrapper">
-          <section id="projects" class="fullpage projects">
-            <h2 class="projects__title main__title title">My Projects</h2>
-            <div class="projects__wrapper">
-              <!-- <div class="project__entry">
+                    <img
+                        src="img/about_wave_bottom.svg"
+                        alt=""
+                        class="fullpage__image bottom"
+                    />
+                </div>
+
+                <!-- projects page -->
+                <div class="fullpage__wrapper">
+                    <section id="projects" class="fullpage projects">
+                        <h2 class="projects__title main__title title">
+                            My Projects
+                        </h2>
+                        <div class="projects__wrapper">
+                            <!-- <div class="project__entry">
                 <a>
                   <h3 class="project__entry__title title">Concentrate</h3>
                 </a>
@@ -234,40 +287,39 @@
                   with an SQL database.
                 </p>
               </div> -->
-              <div class="project__entry visible">
-                <a
-                  href="https://github.com/allanhechen/pico-lightsaber"
-                  target="_blank"
-                >
-                  <h3 class="project__entry__title title">pico-lightsaber</h3>
-                </a>
-                <p class="project__entry__body body">
-                  Watch a demo
-                  <a
-                    href="this is a placeholder link sorry i'm working on the demo"
-                    >soon... (I'm working on it)</a
-                  >
-                  <br />
-                  <br />
-                  This is a lightsaber built entirely from scratch using a
-                  Raspberry Pi Pico, a 6-axis gyroscope, and an I2S audio
-                  interface. The blade is made of a string of Neopixel LEDs
-                  diffused with packing foam. The hilt is 3D printed and modeled
-                  by me as well.
-                  <br />
-                  <br />
-                  It was designed to withstand strong hits from other
-                  lightsabers, so these are built to withstand dueling.It
-                  detects how quickly you're swinging it, and changes the sound
-                  based upon your motions. If you come to an abrupt stop, it
-                  also plays a hit sound!
-                  <br />
-                  <br />
-                  Additional functionality was also added to switch blade
-                  colors.
-                </p>
-              </div>
-              <!-- <div class="project__entry">
+                            <div class="project__entry visible">
+                                <a
+                                    href="https://github.com/allanhechen/pico-lightsaber"
+                                    target="_blank"
+                                >
+                                    <h3 class="project__entry__title title">
+                                        pico-lightsaber
+                                    </h3>
+                                </a>
+                                <p class="project__entry__body body">
+                                    <br />
+                                    <br />
+                                    This is a lightsaber built entirely from
+                                    scratch using a Raspberry Pi Pico, a 6-axis
+                                    gyroscope, and an I2S audio interface. The
+                                    blade is made of a string of Neopixel LEDs
+                                    diffused with packing foam. The hilt is 3D
+                                    printed and modeled by me as well.
+                                    <br />
+                                    <br />
+                                    It was designed to withstand strong hits
+                                    from other lightsabers, so these are built
+                                    to withstand dueling.It detects how quickly
+                                    you're swinging it, and changes the sound
+                                    based upon your motions. If you come to an
+                                    abrupt stop, it also plays a hit sound!
+                                    <br />
+                                    <br />
+                                    Additional functionality was also added to
+                                    switch blade colors.
+                                </p>
+                            </div>
+                            <!-- <div class="project__entry">
                 <a
                   href="https://github.com/allanhechen/Study-Oppa"
                   target="_blank"
@@ -326,56 +378,66 @@
                   Javascript building it.
                 </p>
               </div> -->
-            </div>
-          </section>
-          <!-- <img src="img/about_wave.svg" alt="" class="fullpage__image bottom"> -->
-        </div>
+                        </div>
+                    </section>
+                    <!-- <img src="img/about_wave.svg" alt="" class="fullpage__image bottom"> -->
+                </div>
 
-        <!-- contact page -->
-        <div class="fullpage__wrapper">
-          <img src="img/contact_wave.svg" alt="" class="fullpage__image top" />
-          <section id="contact" class="fullpage contact">
-            <h2 class="contact__title main__title title">Contact Me</h2>
-            <div class="contact__form">
-              <p class="body">
-                Resume:
-                <a
-                  href="files/Allan_HeChen_Resume.pdf"
-                  target="_blank"
-                  class="link body"
-                  >Open in new tab</a
-                >
-              </p>
+                <!-- contact page -->
+                <div class="fullpage__wrapper">
+                    <img
+                        src="img/contact_wave.svg"
+                        alt=""
+                        class="fullpage__image top"
+                    />
+                    <section id="contact" class="fullpage contact">
+                        <h2 class="contact__title main__title title">
+                            Contact Me
+                        </h2>
+                        <div class="contact__form">
+                            <p class="body">
+                                Resume:
+                                <a
+                                    href="files/Allan_HeChen_Resume.pdf"
+                                    target="_blank"
+                                    class="link body"
+                                    >Open in new tab</a
+                                >
+                            </p>
+                        </div>
+                        <div class="contact__form">
+                            <p class="body">
+                                GitHub:
+                                <a
+                                    href="https://github.com/allanhechen"
+                                    class="link body"
+                                    >allanhechen</a
+                                >
+                            </p>
+                        </div>
+                        <div class="contact__form">
+                            <p class="body">
+                                Email:
+                                <a
+                                    href="mailto:allanhechen@gmail.com"
+                                    class="link body"
+                                    >allanhechen@gmail.com</a
+                                >
+                            </p>
+                        </div>
+                        <div class="contact__form">
+                            <p class="body">
+                                Linkedin:
+                                <a
+                                    href="https://www.linkedin.com/in/allan-he-chen/"
+                                    class="link body"
+                                    >Allan He-Chen</a
+                                >
+                            </p>
+                        </div>
+                    </section>
+                </div>
             </div>
-            <div class="contact__form">
-              <p class="body">
-                GitHub:
-                <a href="https://github.com/allanhechen" class="link body"
-                  >allanhechen</a
-                >
-              </p>
-            </div>
-            <div class="contact__form">
-              <p class="body">
-                Email:
-                <a href="mailto:allanhechen@gmail.com" class="link body"
-                  >allanhechen@gmail.com</a
-                >
-              </p>
-            </div>
-            <div class="contact__form">
-              <p class="body">
-                Linkedin:
-                <a
-                  href="https://www.linkedin.com/in/allan-he-chen/"
-                  class="link body"
-                  >Allan He-Chen</a
-                >
-              </p>
-            </div>
-          </section>
-        </div>
-      </div>
-    </main>
-  </body>
+        </main>
+    </body>
 </html>
